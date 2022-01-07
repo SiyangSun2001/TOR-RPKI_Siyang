@@ -8,4 +8,4 @@ The consensus file we downloaded from Tor Metrics need to be parsed and checked 
 3. Go to the output folder within the de-compressed ROA folder and copy the only .csv file into the tor-rpki folder 
 4. Run convertData.py to convert the .csv file into the readable form 
 5. Run preprocessConsensus.py fill in the time period corresponding to the consensus file and also put the whole path to the .csv file for ROA validation 
-  a. if this is your first time running a consensus that is half a year away from the previous consensus, you would want to put make_pickle = True, existing_file = False in the pre_asn function. In this way, it makes a new pickle file for the  ip -> asn map so later consensus could use this more recent file to achieve a faster runtime 
+  1. if this is your first time running a consensus that is half a year away from the previous consensus, you would want to put make_pickle = True, existing_file = False in the pre_asn function. In this way, it makes a new pickle file for the  ip -> asn map so later consensus could use this more recent file to achieve a faster runtime 
