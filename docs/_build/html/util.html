@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>util module &#8212; TOR  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="upgradeIpASNMap module" href="upgradeIpASNMap.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-util">
+<span id="util-module"></span><h1>util module<a class="headerlink" href="#module-util" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="util.Relay">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">Relay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.Relay" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Relay Object to store information on each relay parsed from consensus file 
+stores the relay’s ip, fingerprint etc.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.datespan">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">datespan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">delta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">datetime.timedelta(seconds=3600)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.datespan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to iterate through each hour in a given timespan and out put each iteraton</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> – (datetime object) start date of the duration</p></li>
+<li><p><strong>end_date</strong> – (datetime object) end date of the duration</p></li>
+<li><p><strong>delta</strong> – (timedelta) the interval of each iteration, default to 1 hour</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.get_all_ips">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">get_all_ips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.get_all_ips" title="Permalink to this definition">¶</a></dt>
+<dd><p>get all ip addresses of relays in a duration of consensus files, draw data from the archive_pickle folder</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> – (datetime object) start date of the duration</p></li>
+<li><p><strong>end_date</strong> – (datetime object) end date of the duration</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(set) return 2 sets containing ip address, for IPv4 and IPv6 addresses</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.get_prefix_and_asn">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">get_prefix_and_asn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ip</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.get_prefix_and_asn" title="Permalink to this definition">¶</a></dt>
+<dd><p>old method of getting prefix and asn given ip, currently uses routeview data and searches offline
+see get_prefix_and_asn_local(ip) for new method in preprocess_consensus.py</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>ip</strong> – (str) ip address in string format</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) returns a list containing prefix and ASN of the ip address</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.get_roas">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">get_roas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.get_roas" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse roa file in .csv format, put each entry in a list, then append to a list containing all entries.
+each line in the file converts into [ipv4, maxlen, prefixlen, asn]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – (string) name of the csv file to parse</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) 2 lists of list for ipv4 and ipv6 addresses, entry in each list is [ipv4, maxlen, prefixlen, asn]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.load_consensus">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">load_consensus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.load_consensus" title="Permalink to this definition">¶</a></dt>
+<dd><p>(same as the function in process_consensus.py)
+pulls list of relay object, weight info (wgd, wgg) from pickled file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>p</strong> – (str) path of pickle directory</p></li>
+<li><p><strong>year</strong> – (str) year of the consensus</p></li>
+<li><p><strong>month</strong> – (str) month of the consensus</p></li>
+<li><p><strong>date</strong> – (str) date of the consensus</p></li>
+<li><p><strong>hour</strong> – (str) hour of the consensus</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list of relay objects, wgd, wgg</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="util.recent_relays_hour">
+<span class="sig-prename descclassname"><span class="pre">util.</span></span><span class="sig-name descname"><span class="pre">recent_relays_hour</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#util.recent_relays_hour" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets relays info from one consensus file (one hour duration)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>year</strong> – (str) year</p></li>
+<li><p><strong>month</strong> – (str) month</p></li>
+<li><p><strong>date</strong> – (str) date</p></li>
+<li><p><strong>hour</strong> – (str) hour</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) list of relays objects</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">TOR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">tor-rpki</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="convertData.html">convertData module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphs.html">graphs module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graphs_all.html">graphs_all module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyployTest.html">pyployTest module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">util module</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  <li><a href="modules.html">tor-rpki</a><ul>
+      <li>Previous: <a href="upgradeIpASNMap.html" title="previous chapter">upgradeIpASNMap module</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Siyang Sun.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/util.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
