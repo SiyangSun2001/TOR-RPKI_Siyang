@@ -1,6 +1,6 @@
 # TOR-RPKI_Siyang
 This python simulator simultates the TOR’s relay selection process. The consensus file from Tor Metrics are used to simulate to network environment, including the relay status and bandwidth. Then, the simulator creates client object to mimic the relay selection process in actual TOR network. ROA/ROV coverage for guard relay and ROA-ROV matching connection coverage are extracted from these simulations. The flow diagram below shows the work flow of the python simulator in creating guard selection simulation, record ROA/ROV coverage etc.
-# Mini Tutorial
+## Mini Tutorial
 Preprocessing Consensus:
 The consensus file we downloaded from Tor Metrics need to be parsed and checked for RPKI coverage for future analysis. We parse these file once and pickle them (python’s library for converting object into byte string) for later use, so we don’t have to process the raw data everytime. 
 1. Download TOR Consensus file from TOR Metrics and store in the  tor-rpki/archive folder and de-compress it. 
