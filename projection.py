@@ -440,25 +440,25 @@ def mar_guards_analysis(mar, mar_guards):
 
 
 def main(): 
-    with open("archive_pickles/2020-09-13.pickle", 'rb') as f1:
+    with open("archive_pickles/2020-12-13.pickle", 'rb') as f1:
         relays = pickle.load(f1)
         sept = get_data(relays)
-    with open("archive_pickles/2020-10-13.pickle", 'rb') as f2:
+    with open("archive_pickles/2021-01-13.pickle", 'rb') as f2:
         relays = pickle.load(f2)
         octo = get_data(relays)
-    with open("archive_pickles/2020-11-17.pickle", 'rb') as f3:
+    with open("archive_pickles/2021-02-13.pickle", 'rb') as f3:
         relays = pickle.load(f3)
         nov = get_data(relays)
-    with open("archive_pickles/2020-12-13.pickle", 'rb') as f4:
+    with open("archive_pickles/2021-03-13.pickle", 'rb') as f4:
         relays = pickle.load(f4)
         dec = get_data(relays)
-    with open("archive_pickles/2021-01-13.pickle", 'rb') as f5:
+    with open("archive_pickles/2021-04-13.pickle", 'rb') as f5:
         relays = pickle.load(f5)
         jan = get_data(relays)
-    with open("archive_pickles/2021-02-17.pickle", 'rb') as f6:
+    with open("archive_pickles/2021-05-13.pickle", 'rb') as f6:
         relays = pickle.load(f6)
         feb = get_data(relays)
-    with open("archive_pickles/2021-03-13.pickle", 'rb') as f7:
+    with open("archive_pickles/2021-06-13.pickle", 'rb') as f7:
         relays = pickle.load(f7)
         mar = get_data(relays, guards=False)
         mar_guards = get_data(relays, guards=True)
@@ -467,107 +467,107 @@ def main():
     
     months = [sept, octo, nov, dec, jan, feb, mar]
     #labels = ['2020-09-13', '2020-10-13', '2020-11-17', '2020-12-13', '2021-01-13', '2021-02-17', '2021-03-13']
-    '''
-    time = []
-    fps = set()
-    for mon in months:
-        relays = mon['relays']
-        fps.update([r.fp for r in relays])
-        time.append(mon['rs'])
-    over_time = []
-    for fp in fps:
-        fp_c = [fp]
-        for t in time:
-            if fp not in t:
-                fp_c.append('x')
-            else:
-                fp_c.append(t[fp])
-        over_time.append(fp_c)
 
-    added = []
-    added_fps = set()
-    for a in over_time:
-        fp = a[0]
-        cur = a[1]
-        for i in range(2, 8):
-            if cur == 'nc' and a[i] in ['v', 'ia', 'iap', 'ip']:
-                added.append(a)
-                added_fps.add(a[0])
-                continue
-            cur == a[i]
-    print(len(added))
-    now_have = 0
-    now = set()
-    for ad in added:
-        if ad[0] in now:
-            continue
-        now.add(ad[0])
-        if ad[7] in ['v', 'ia', 'iap', 'ip']:
-            now_have += 1
-    print(now_have)
+    # time = []
+    # fps = set()
+    # for mon in months:
+    #     relays = mon['relays']
+    #     fps.update([r.fp for r in relays])
+    #     time.append(mon['rs'])
+    # over_time = []
+    # for fp in fps:
+    #     fp_c = [fp]
+    #     for t in time:
+    #         if fp not in t:
+    #             fp_c.append('x')
+    #         else:
+    #             fp_c.append(t[fp])
+    #     over_time.append(fp_c)
 
-    fs = []
-    ps = []
-    ns = []
-    aa = []
-    for mon in months:
-        full = set()
-        partial = set()
-        none = set()
-        asns = mon['asn4s'].keys()
-        a = []
-        for asn in asns:
-            r = mon['asn4s'][asn]['relays']
-            r_nc = mon['asn4s'][asn]['relays_nc']
-            if r_nc == 0:
-                full.add(asn)
-            elif r == r_nc:
-                none.add(asn)
-            else:
-                partial.add(asn)
-            a.append([asn, r, r_nc])
-        f = len(full)
-        p = len(partial)
-        n = len(none)
-        a = len(asns)
-        c = f + p
-        # print('full: {} ({} / {}), partial: {} ({} / {}), none: {} ({} / {}))'.format((f/c), f, c, (p/c), p, c, (n/a), n, a))
-        fs.append(full)
-        ps.append(partial)
-        ns.append(none)
-        aa.append(a)
-    
-    
-    mar_as_by_nc = aa[-1]
-    mar_as_by_nc.sort(key=lambda x:x[2], reverse=True)
-    print(mar_as_by_nc[:10])
-    mar_as_by_r = aa[-1]
-    mar_as_by_r.sort(key=lambda x:x[1], reverse=True)
-    print(mar_as_by_r[:10])
+    # added = []
+    # added_fps = set()
+    # for a in over_time:
+    #     fp = a[0]
+    #     cur = a[1]
+    #     for i in range(2, 8):
+    #         if cur == 'nc' and a[i] in ['v', 'ia', 'iap', 'ip']:
+    #             added.append(a)
+    #             added_fps.add(a[0])
+    #             continue
+    #         cur == a[i]
+    # print(len(added))
+    # now_have = 0
+    # now = set()
+    # for ad in added:
+    #     if ad[0] in now:
+    #         continue
+    #     now.add(ad[0])
+    #     if ad[7] in ['v', 'ia', 'iap', 'ip']:
+    #         now_have += 1
+    # print(now_have)
 
-    num_relays = mar['num_relays']
-    v4_covered = mar['v4_covered'] + mar['v4_invalid']
-    v4_uncovered = num_relays - v4_covered
-    #print('# IPv4 Protected Relays: {} ({} / {})'.format((v4_covered / num_relays), v4_covered, num_relays))
+    # fs = []
+    # ps = []
+    # ns = []
+    # aa = []
+    # for mon in months:
+    #     full = set()
+    #     partial = set()
+    #     none = set()
+    #     asns = mon['asn4s'].keys()
+    #     a = []
+    #     for asn in asns:
+    #         r = mon['asn4s'][asn]['relays']
+    #         r_nc = mon['asn4s'][asn]['relays_nc']
+    #         if r_nc == 0:
+    #             full.add(asn)
+    #         elif r == r_nc:
+    #             none.add(asn)
+    #         else:
+    #             partial.add(asn)
+    #         a.append([asn, r, r_nc])
+    #     f = len(full)
+    #     p = len(partial)
+    #     n = len(none)
+    #     a = len(asns)
+    #     c = f + p
+    #     # print('full: {} ({} / {}), partial: {} ({} / {}), none: {} ({} / {}))'.format((f/c), f, c, (p/c), p, c, (n/a), n, a))
+    #     fs.append(full)
+    #     ps.append(partial)
+    #     ns.append(none)
+    #     aa.append(a)
     
-    num_relays = mar_guards['num_relays']
-    v4_covered = mar_guards['v4_covered'] + mar_guards['v4_invalid']
-    v4_covered_w_partial = v4_covered 
-    n_partial = 0
-    for asn in partial:
-        if asn not in mar_guards['asn4s']:
-            continue
-        v4_covered_w_partial += mar_guards['asn4s'][asn]['relays_nc']
-        n_partial += mar_guards['asn4s'][asn]['relays_nc']
     
-    v4_covered_w_partial = v4_covered 
-    n_partial = 0
-    for asn in partial:
-        v4_covered_w_partial += mar['asn4s'][asn]['relays_nc']
-        n_partial += mar['asn4s'][asn]['relays_nc']
-    #print('# IPv4 Uncovered Relays: {} ({} / {})'.format((n_partial / v4_uncovered), n_partial, v4_uncovered) )
-    #print('# IPv4 Protected Relays (if partial coverage becomes full): {} ({} / {})'.format((v4_covered_w_partial / num_relays), v4_covered_w_partial, num_relays) )
-    '''
+    # mar_as_by_nc = aa[-1]
+    # mar_as_by_nc.sort(key=lambda x:x[2], reverse=True)
+    # print(mar_as_by_nc[:10])
+    # mar_as_by_r = aa[-1]
+    # mar_as_by_r.sort(key=lambda x:x[1], reverse=True)
+    # print(mar_as_by_r[:10])
+
+    # num_relays = mar['num_relays']
+    # v4_covered = mar['v4_covered'] + mar['v4_invalid']
+    # v4_uncovered = num_relays - v4_covered
+    # #print('# IPv4 Protected Relays: {} ({} / {})'.format((v4_covered / num_relays), v4_covered, num_relays))
+    
+    # num_relays = mar_guards['num_relays']
+    # v4_covered = mar_guards['v4_covered'] + mar_guards['v4_invalid']
+    # v4_covered_w_partial = v4_covered 
+    # n_partial = 0
+    # for asn in partial:
+    #     if asn not in mar_guards['asn4s']:
+    #         continue
+    #     v4_covered_w_partial += mar_guards['asn4s'][asn]['relays_nc']
+    #     n_partial += mar_guards['asn4s'][asn]['relays_nc']
+    
+    # v4_covered_w_partial = v4_covered 
+    # n_partial = 0
+    # for asn in partial:
+    #     v4_covered_w_partial += mar['asn4s'][asn]['relays_nc']
+    #     n_partial += mar['asn4s'][asn]['relays_nc']
+    # #print('# IPv4 Uncovered Relays: {} ({} / {})'.format((n_partial / v4_uncovered), n_partial, v4_uncovered) )
+    # #print('# IPv4 Protected Relays (if partial coverage becomes full): {} ({} / {})'.format((v4_covered_w_partial / num_relays), v4_covered_w_partial, num_relays) )
+    
 
 if __name__ == '__main__':
     sys.exit(main())

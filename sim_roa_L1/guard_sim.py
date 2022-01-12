@@ -5,6 +5,9 @@ import argparse
 import sys
 
 def parse_arguments(args):
+    """
+    parses command line arguments into variable to be used in the main function 
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("start_date", help="date in year-mo-da-hr format")
     parser.add_argument("end_date", help="date in year-mo-da-hr format")
@@ -14,6 +17,16 @@ def parse_arguments(args):
 
 
 def main(args):
+    """
+    main function of the guard simulator. Uses vanilla Tor guard selection
+    algorithm to simulate the selection process over a time duration and output a 
+    graph named L1Graph.png containing the load balance, client roa coverage etc for the simulated network. 
+
+    :param start_date: (str) start date in year-mo-da-hr format
+    :param end_date: (str) end date in year-mo-da-hr format
+    :param num_clients: (int) the number of client objects for the simulation, larger number will reflect a more accurate performance but will take 
+    longer time to process 
+    """
     # timer
     tic = time.perf_counter()
     # process args

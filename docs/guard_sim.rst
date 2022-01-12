@@ -1,7 +1,7 @@
-pyployTest module
+guard\_sim module
 =================
 
-.. automodule:: pyployTest
+.. automodule:: guard_sim
    :members:
    :undoc-members:
    :show-inheritance:
