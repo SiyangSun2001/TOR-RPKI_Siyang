@@ -14,7 +14,7 @@ def getROA_ROV_freq(numRuns):
     count = numRuns
     while count > 0:
         print(count)
-        clients, specs = assignASN(1000, countries, cweights, 'matching', '/home/siyang/research/tor-rpki/20200913.csv')
+        clients, specs = assignASN(1000, countries, cweights, 'matching', '../20200913.csv')
         roa.append(specs[1])
         rov.append(specs[2])
         neither.append(specs[3])

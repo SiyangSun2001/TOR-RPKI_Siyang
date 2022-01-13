@@ -42,6 +42,9 @@ def parse_arguments(args):
 #     print(ipBin1)
 #     print(ipBin2)
 def main(args):
+    """
+    adapted the original guard_sim.py to analyze the guard selection algorithm's affect on the number of possible exit relays 
+    """
     # timer
     tic = time.perf_counter()
     # process args

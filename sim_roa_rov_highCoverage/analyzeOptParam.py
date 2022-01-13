@@ -123,5 +123,5 @@ def get_max_param(file):
 
 # get_max_param('fairParam.pickle')
 #LB, roarov, proa
-analyzeParam('/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiLBResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiROA_ROVResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualipROA_Result.pickle')
+# analyzeParam('/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiLBResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiROA_ROVResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualipROA_Result.pickle')
 

@@ -8,7 +8,7 @@ UserPerCountry = {'US': 0.2429, 'RU': 0.1543, 'DE': 0.07980000000000001, 'NL': 0
 countries = list(UserPerCountry.keys())
 cweights = list(UserPerCountry.values())
 tempROAls = set()
-with open('/home/siyang/research/tor-rpki/20200913.csv', 'r') as f:
+with open('../20200913.csv', 'r') as f:
     csvreader = csv.reader(f)
     for row in csvreader:
         tempROAls.add(row[0])
@@ -407,10 +407,10 @@ def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, 
     return resultClientList
 
 # # def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, csvfile):
-specifiedClients = user_specified_client2(470, 13, 119, 398, 1000, 'matching', '/home/siyang/research/tor-rpki/20200913.csv')
+# specifiedClients = user_specified_client2(470, 13, 119, 398, 1000, 'matching', '/home/siyang/research/tor-rpki/20200913.csv')
 
-with open('NEWhighCoverageClient.pickle', 'wb') as f2:
-    pickle.dump(specifiedClients, f2)
+# with open('NEWhighCoverageClient.pickle', 'wb') as f2:
+#     pickle.dump(specifiedClients, f2)
 
 
 def get_highCoverage_distribution(repeatTime):

@@ -14,7 +14,7 @@ cweights = list(UserPerCountry.values())
 def get_Client_Coverage_ExpectedValue(consensus_date, discount):
 
     #path for processed pickle file
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -53,7 +53,7 @@ def get_Client_Coverage_ExpectedValue(consensus_date, discount):
 
 def get_LoadBalance_expectedValue(consensus_date, discount):
         #path for processed pickle file
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -311,7 +311,8 @@ def main(args):
     
     # plt.savefig('expectLBdiffLoad.png')
     # get_expectVal_wdiffLoad(consensus_date)
-    get_LoadBalance_Matching(consensus_date, numClients, roacsv, [0.2,0.8,0.8])
+    # get_LoadBalance_Matching(consensus_date, numClients, roacsv, [0.2,0.8,0.8])
+    # print(get_LoadBalance_expectedValue(consensus_date, 0.8))
 if __name__ == '__main__':
     sys.exit(main(sys.argv[1:]))
 

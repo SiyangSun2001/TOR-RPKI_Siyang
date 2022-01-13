@@ -7,6 +7,13 @@ import time
 # map prefix to number of possible ipaddresses within this prefix
 # return prefix -> num of ipv4 addresses 
 def get_prefix_addresses_map():
+    """
+    return a map of IP prefix to number of possible users. 
+    used to quickly sum up the number of possible IPv4 announced within an AS 
+    
+    /32 -> 0 client 
+    /31 -> 2 clients 
+    """
     prefixMap = dict()
     for i in range(0,33):
         if 2**(32-i) - 2 > 0:
@@ -18,8 +25,15 @@ def get_prefix_addresses_map():
     return prefixMap
 
 
-# in put ip prefix and return the max and min addresses within this prefix 
+# input ip prefix and return the max and min addresses within this prefix 
 def get_max_min(ipPrefix):
+    """
+    input an IP prefix and return the highest and lowest IP address 
+
+    :param ipPrefix: (string) IPv4 prefix 
+
+    :return: (IPv4Address object) return the lowerst address and highest address 
+    """
     range = [8,16,24,32] # used in the for loop below 
 
     ip  = ipPrefix.split('/')[0].split('.') #ip prefix before the slash and split between the dots 
@@ -48,8 +62,8 @@ def get_max_min(ipPrefix):
         #convert ip address bin -> dotted
         for i in range:
             if i != 32:
-                rmin += x + '.'
-                rmax +=str(int(max[temp:i], 2)) + '.'
+                rmin += str(int(min[temp:i], 2)) + '.'
+                rmax += str(int(max[temp:i], 2)) + '.'
                 temp = i
             else:
                 rmin += str(int(min[temp:i], 2)+1) 
@@ -61,99 +75,107 @@ def get_max_min(ipPrefix):
 
 # function that calculates the difference between 2 ip addresses and tries to get the number of addresses in between 
 #later found out its easier to just use the map to find num of ip addresses
-def get_ip_difference(ip1, ip2):
-    ip1 = ip1.split('.')
-    ip2 = ip2.split('.')
-    # split 2 addresses by the dot
+# def get_ip_difference(ip1, ip2):
+#     """
+#     alternative function to find the number of IP address within a prefix, the get_prefix_addresses_map() has faster
+#     runtime so this function is discarded 
+#     """
+#     ip1 = ip1.split('.')
+#     ip2 = ip2.split('.')
+#     # split 2 addresses by the dot
 
-    ip1Bin = ''
-    for oct in ip1:
-        ip1Bin += '{0:08b}'.format(int(oct))
+#     ip1Bin = ''
+#     for oct in ip1:
+#         ip1Bin += '{0:08b}'.format(int(oct))
 
-    ip2Bin = ''
-    for oct in ip2:
-        ip2Bin += '{0:08b}'.format(int(oct))
-    # get the 2 addresses in decimals
+#     ip2Bin = ''
+#     for oct in ip2:
+#         ip2Bin += '{0:08b}'.format(int(oct))
+#     # get the 2 addresses in decimals
 
-    diff = abs(int(ip2Bin, 2) - int(ip1Bin, 2)) 
-    # get the difference between 2 addresses
-    return diff
-
-
-#discarded function, b/c does not account for multi-origin ip prefix 
-def getAllAS():
-    ASDict = dict()
-    with open("/home/siyang/research/tor-rpki/demoRouteView.pfx2as") as tsv:
-
-        prevASN = 0
-        prevIP = {}
-        prevNumIP = 0
-        count  = 0
-        for line in csv.reader(tsv, dialect = "excel-tab"):
-            if count % 1000 == 0:
-                print(count)
-            if ',' not in line[2]:
-                curASN = int(line[2])
-            else:
-                curASN = int(line[2].split(',')[0])
-            if line[0] == '0':
-                ASDict[prevASN].numIPv4 += prevNumIP
-            elif "_" in line[2]:
-                continue
-            elif curASN == prevASN:
-                i = set(ipaddress.IPv4Network(line[0] + '/' +  line[1]).hosts())
-                prevIP = prevIP.union(i)
-                prevNumIP = len(prevIP)
-            else:
-                i = set(ipaddress.IPv4Network(line[0] + '/' +  line[1]).hosts())
-                if prevASN != 0:
-                    ASDict[prevASN].numIPv4 += prevNumIP
-                prevASN = curASN
-                prevIP = i
-                prevNumIP = len(i)
-                if curASN not in ASDict.keys():
-                    ASDict[curASN] = AS(ASN = curASN)
-
-            count += 1
-    return ASDict
+#     diff = abs(int(ip2Bin, 2) - int(ip1Bin, 2)) 
+#     # get the difference between 2 addresses
+#     return diff
 
 
-#discarded function, too slow. uses python ipaddress library 
-def getAllAS2():
-    ASDict = dict()
-    count =  0
-    with open("/home/siyang/research/tor-rpki/demoRouteView.pfx2as") as tsv:
-        for line in csv.reader(tsv, dialect = "excel-tab"):
-            if count % 1000 == 0:
-                print(count)
-            count += 1
-            curNetwork = set(ipaddress.IPv4Network(line[0] + '/' + line[1]).hosts())
-            if ',' not in line[2] and '_' not in line[2]:
-                curASN = line[2]
-                # print(type(curASN))
-                if curASN not in ASDict.keys():
-                    ASDict[curASN] = AS(ASN  =curASN)
-                if ASDict[curASN].prevNetwork == None:
-                    ASDict[curASN].numIPv4 = len(curNetwork)
-                    ASDict[curASN].prevNetwork = curNetwork
-                else:
-                    ASDict[curASN].numIPv4 += len(curNetwork.difference(ASDict[curASN].prevNetwork))
-            else:
-                ASNList = re.split(',|_' ,line[2])
+# #discarded function, b/c does not account for multi-origin ip prefix 
+# def getAllAS():
+#     ASDict = dict()
+#     with open("../demoRouteView.pfx2as") as tsv:
 
-                for i in ASNList:
-                    curASN = i
-                    if curASN not in ASDict.keys():
-                        ASDict[curASN] = AS(ASN  = curASN)
-                    if ASDict[curASN].prevNetwork == None:
-                        ASDict[curASN].numIPv4 = len(curNetwork)
-                        ASDict[curASN].prevNetwork = curNetwork
-                    else:
-                        ASDict[curASN].numIPv4 += len(curNetwork.difference(ASDict[curASN].prevNetwork))
-    return ASDict
+#         prevASN = 0
+#         prevIP = {}
+#         prevNumIP = 0
+#         count  = 0
+#         for line in csv.reader(tsv, dialect = "excel-tab"):
+#             if count % 1000 == 0:
+#                 print(count)
+#             if ',' not in line[2]:
+#                 curASN = int(line[2])
+#             else:
+#                 curASN = int(line[2].split(',')[0])
+#             if line[0] == '0':
+#                 ASDict[prevASN].numIPv4 += prevNumIP
+#             elif "_" in line[2]:
+#                 continue
+#             elif curASN == prevASN:
+#                 i = set(ipaddress.IPv4Network(line[0] + '/' +  line[1]).hosts())
+#                 prevIP = prevIP.union(i)
+#                 prevNumIP = len(prevIP)
+#             else:
+#                 i = set(ipaddress.IPv4Network(line[0] + '/' +  line[1]).hosts())
+#                 if prevASN != 0:
+#                     ASDict[prevASN].numIPv4 += prevNumIP
+#                 prevASN = curASN
+#                 prevIP = i
+#                 prevNumIP = len(i)
+#                 if curASN not in ASDict.keys():
+#                     ASDict[curASN] = AS(ASN = curASN)
 
-def getAllAS3():
+#             count += 1
+#     return ASDict
 
+
+# #discarded function, too slow. uses python ipaddress library 
+# def getAllAS2():
+#     ASDict = dict()
+#     count =  0
+#     with open("../demoRouteView.pfx2as") as tsv:
+#         for line in csv.reader(tsv, dialect = "excel-tab"):
+#             if count % 1000 == 0:
+#                 print(count)
+#             count += 1
+#             curNetwork = set(ipaddress.IPv4Network(line[0] + '/' + line[1]).hosts())
+#             if ',' not in line[2] and '_' not in line[2]:
+#                 curASN = line[2]
+#                 # print(type(curASN))
+#                 if curASN not in ASDict.keys():
+#                     ASDict[curASN] = AS(ASN  =curASN)
+#                 if ASDict[curASN].prevNetwork == None:
+#                     ASDict[curASN].numIPv4 = len(curNetwork)
+#                     ASDict[curASN].prevNetwork = curNetwork
+#                 else:
+#                     ASDict[curASN].numIPv4 += len(curNetwork.difference(ASDict[curASN].prevNetwork))
+#             else:
+#                 ASNList = re.split(',|_' ,line[2])
+
+#                 for i in ASNList:
+#                     curASN = i
+#                     if curASN not in ASDict.keys():
+#                         ASDict[curASN] = AS(ASN  = curASN)
+#                     if ASDict[curASN].prevNetwork == None:
+#                         ASDict[curASN].numIPv4 = len(curNetwork)
+#                         ASDict[curASN].prevNetwork = curNetwork
+#                     else:
+#                         ASDict[curASN].numIPv4 += len(curNetwork.difference(ASDict[curASN].prevNetwork))
+#     return ASDict
+
+def getAllAS3(routeviewFile):
+    """
+    using routeview data, create dictionary ASn -> ASN object. ASN object has the AS' prefixes and total number of IP addresses. 
+
+    :param routeviewFile: (string) file path to the routeview data 
+    """
     #get the prefix -> num of ip addresses map 
     prefix_hosts_map = get_prefix_addresses_map()
 
@@ -164,7 +186,7 @@ def getAllAS3():
     #open the route view data
     #IP address -> ASN map 
     #https://www.caida.org/catalog/datasets/routeviews-prefix2as/#H2838
-    with open("/home/siyang/research/tor-rpki/routeviews-rv2-20210722-0200.pfx2as") as tsv:
+    with open(routeviewFile) as tsv:
         #retrieve the tab separated data 
         for line in csv.reader(tsv, dialect = "excel-tab"):
 
@@ -200,13 +222,22 @@ def getAllAS3():
 
     return ASDict
 
-def preprocess_asn_origin():
-    orgID_origin = dict()
-    #map orginzation id to origin country
-    #https://www.caida.org/catalog/datasets/as-organizations/
-    asn_orgID  =dict()
+def preprocess_asn_origin(caidaFile):
     
-    with open('/home/siyang/research/tor-rpki/20210701.as-org2info.txt') as f1:
+    """
+    preprocess the caida data to assign origin to ASN. 
+    map orginzation id to origin country
+    https://www.caida.org/catalog/datasets/as-organizations/
+
+    :param caidaFile: (string) path to the Caida file 
+
+    :return: (dictionary) 2 dictionary that when used together could find the origin of an AS using ASN 
+    """
+    orgID_origin = dict() #maps orgID -> origin 
+
+    asn_orgID  =dict() #maps ASN -> orgID 
+    
+    with open(caidaFile) as f1:
         for line in f1:
             if not (line.startswith("#")):
                 tempList = line.split('|')
@@ -218,6 +249,15 @@ def preprocess_asn_origin():
     return asn_orgID, orgID_origin
 
 def get_origin(asn_orgID, orgID_origin, ASNnumIP):
+    """
+    assign origin to all ASes after tallying up the number of IP addresses announced 
+
+    :param asn_orgID: (dictionary) helper dict obtained from preprocess_asn_origin(caidaFile)
+    :param orgID_origin: (dictionary) helper dict obtained from preprocess_asn_origin(caidaFile)
+    :param ASNnumIP: (dictionary) result dict of all AS with number of Ip addresses tallied up using getAllAS3()
+
+    :return: (dictionary) return ASNnumIP dict with the origin of each AS filled in 
+    """
     for asn in ASNnumIP.keys():
         try:
             ASNnumIP[asn].origin = orgID_origin[asn_orgID[asn]]
@@ -226,16 +266,20 @@ def get_origin(asn_orgID, orgID_origin, ASNnumIP):
     return ASNnumIP
 
 def main():
+    """
+    main function that uses the above function to save a pickled dictionary containing ASes filled with origin and number of IP addresses it announces 
+    download the prefix to ASN file (routeviews-rv2-20210722-0200.pfx2as) here https://publicdata.caida.org/datasets/routing/routeviews-prefix2as/
+    """
     start2 = time.perf_counter()
-    ASNnumIP = getAllAS3()
+    ASNnumIP = getAllAS3("../routeviews-rv2-20210722-0200.pfx2as")
     end2 = time.perf_counter()
 
 
     print('takes ', (end2 - start2), 'secs to tally up number of ip address each ASN announces')
 
-    asn_orgID, orgID_origin = preprocess_asn_origin()
+    asn_orgID, orgID_origin = preprocess_asn_origin('../20210701.as-org2info.txt')
     result_dict = get_origin(asn_orgID, orgID_origin, ASNnumIP)
-    with open('ASNnumIP.pickle', 'wb') as pf:
+    with open('ASNnumIPtest.pickle', 'wb') as pf:
         pickle.dump(result_dict, pf)
 
 

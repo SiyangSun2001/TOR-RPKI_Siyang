@@ -20,6 +20,13 @@ def parse_arguments(args):
 
 def graph_LB_CDF(p_bw, make_pickle = True, make_graph = False, name = "loadBalanceCDF.png"):
     #graph snapshot of loadbalance in the first hour 
+    """
+    graph and pickle the load balance stats for a consensus file after running the simulation 
+    :param p_bw: result from the guard_sim main function, input the same vairbale into this function to make graph and pickle file 
+    :param make_pickle: (boolean) whether to make pickle of the load balance data 
+    :param make_graph: (boolean) whether to make graph of Load Balance, save to current directory 
+    :param name: (string) name of the graph is make_graph = True
+    """
     loadBalanceSnap = []
     for row in p_bw:
         loadBalanceSnap.append(row[0])
@@ -37,6 +44,13 @@ def graph_LB_CDF(p_bw, make_pickle = True, make_graph = False, name = "loadBalan
         plt.savefig(name)
 
 def graph_ROACoverage_CDF(p_roa, make_pickle = True,make_graph = False, name = "ROACoverageCDF.png"):
+    """
+    graph and pickle the ROA coverage stats for a consensus file after running the simulation 
+    :param p_roa: result from the guard_sim main function, input the same vairbale into this function to make graph and pickle file 
+    :param make_pickle: (boolean) whether to make pickle of the load balance data 
+    :param make_graph: (boolean) whether to make graph of Load Balance, save to current directory 
+    :param name: (string) name of the graph is make_graph = True
+    """
     x = np.sort(p_roa)
     y = np.arange(len(p_roa))/float(len(p_roa))
     if make_pickle:
@@ -52,6 +66,14 @@ def graph_ROACoverage_CDF(p_roa, make_pickle = True,make_graph = False, name = "
     
 
 def graph_roa_rov_matching(h, p_roa_rov, p_total_rov,algo,  make_pickle = True, make_graph = False):
+"""
+    graph and pickle the ROA ROV matching coverage stats for a consensus file after running the simulation 
+    :param p_roa_rov: result from the guard_sim main function, input the same vairbale into this function to make graph and pickle file 
+    :param algo: specify the guard selection algo used
+    :param make_pickle: (boolean) whether to make pickle of the load balance data 
+    :param make_graph: (boolean) whether to make graph of Load Balance, save to current directory 
+    :param name: (string) name of the graph is make_graph = True
+    """
     if make_pickle:
         with open(algo + 'newParamroaROVDEBUG.pickle', 'wb') as pf:
             pickle.dump(h, pf)
@@ -68,6 +90,10 @@ def graph_roa_rov_matching(h, p_roa_rov, p_total_rov,algo,  make_pickle = True, 
         plt.savefig(algo + 'RoaRov.png')
 
 def main(args):
+    """
+    main function of the simulation that uses the util.py and graphing function above to carry out the simulation.
+    add graphing functions at the end of the main function to graph and make pickle file 
+    """
     # timer
     tic = time.perf_counter()
     # process args

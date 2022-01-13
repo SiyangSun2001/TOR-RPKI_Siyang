@@ -35,10 +35,10 @@ def barPlot():
 
 def scatter():
 
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiLBResult.pickle', 'rb') as f:
+    with open('QualiLBResult.pickle', 'rb') as f:
         LB = pickle.load(f)
         
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/QualiROA_ROVResult.pickle', 'rb') as f:
+    with open('QualiROA_ROVResult.pickle', 'rb') as f:
         roaROV = pickle.load(f)
     
 

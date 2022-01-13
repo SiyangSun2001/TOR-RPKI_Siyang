@@ -5,7 +5,7 @@ import requests
 
 
 def requestDescriptor():
-    #request descriptor in json format from tor metricx and pickle the data
+    """request descriptor in json format from tor metricx and pickle the data"""
     url = 'https://onionoo.torproject.org/details'
     x = requests.get(url).json()
 
@@ -13,6 +13,15 @@ def requestDescriptor():
         pickle.dump(list(x["relays"]),f)
 
 def createDict():
+    """
+the descriptor with family list has different fingerprint format for relays comparing to the consensus file we used before, so we need to link the consensus file with the descriptor file.
+The ip address with OR port is unique enough that there is very limited relay that are different but has the same OR port. so we create a dictionary to map relay from consensus file to the same relay in descriptor file. 
+create 2 dict for family check:
+ipTOfp: ip with port -> fingerprint of relay in new file 
+fpTOserver: fp in descriptor -> server object (same relay but need new object to store different fingerprint/info on the same relay)
+
+We can use these 2 dictionary to check relay's family list in the consensus file format using the descriptor requested online. 
+    """
     #create 2 dict to check for family given ip address 
     ipTOfp = dict() #maps ip with port -> fingerprint in descriptor file 
     fpTOserver = dict() #maps fingerprint to server object 

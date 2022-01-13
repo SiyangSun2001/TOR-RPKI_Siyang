@@ -31,7 +31,7 @@ def get_LoadBalance_Matching_multiParam(consensus_date, ClientFile, paramPermuta
 
 
     #path for consensus file 
-    p = '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/HighROAROVConsensus/' + consensus_date + '-processed.pickle'
+    p = 'HighROAROVConsensus/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -301,7 +301,7 @@ def param_multi_run(paramfname, repeat, fromPickle = True):
         pROAls = []
         roaROVls = []
         LBls = []
-        clientFile = '/home/siyang/research/tor-rpki/sim_roa_rov_highCoverage/NEWhighCoverageClient.pickle'
+        clientFile = 'NEWhighCoverageClient.pickle'
         while count < repeat:
             pROA = get_proa_multiparam('2020-09-01-00', clientFile, [p])
             roaROV = get_roarov_matching_multiParam('2020-09-01-00', clientFile, [p])

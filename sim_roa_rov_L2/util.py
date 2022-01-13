@@ -26,24 +26,27 @@ ROVset = pickle.load(file)
 file.close()
 
 class Relay:
-    '''Relay class
+    # '''Relay class
 
-    Attributes
-    ----------
-    fp : string
-        Fingerprint (unique id)
-    ip : string
-        IP address
-    ipv6 : string
-        if relay has IPv6 address, ipv6 == (string) ipv6 address
-        if relay doesn't have an IPv6 address, ipv6 == ''
-    bw : int
-        Bandwidth
-    is_guard : bool
-        True if has 'Guard' flag
-    is_exit : bool
-        True if has 'Exit' flag
-    '''
+    # Attributes
+    # ----------
+    # fp : string
+    #     Fingerprint (unique id)
+    # ip : string
+    #     IP address
+    # ipv6 : string
+    #     if relay has IPv6 address, ipv6 == (string) ipv6 address
+    #     if relay doesn't have an IPv6 address, ipv6 == ''
+    # bw : int
+    #     Bandwidth
+    # is_guard : bool
+    #     True if has 'Guard' flag
+    # is_exit : bool
+    #     True if has 'Exit' flag
+    # '''
+    """
+    relay object used to store information extracted from consensus file 
+    """
     def __init__(self, fp, ip):
         # relay info
         self.fp = fp
@@ -79,7 +82,11 @@ class Relay:
 
 
 class Client:
-    '''Client class for simulating selection algorithm'''
+    # '''Client class for simulating selection algorithm'''
+    """
+    client object to run simulation on selection algorithm. Has AS, IP address attribute to reflect a more realistic simulation. 
+    check add_sampled_guards() to see the implementation of discount and matching selection alforithm. 
+    """
     def __init__(self, selection_algo):
         self.sampled_guards = set()   # nodes that have been listed as a guard at some point
         self.primary_guards = list()  # subset of filtered guards containing N_PRIMARY_GUARDS elements
@@ -287,6 +294,9 @@ class Client:
         self.guard_list[-1].bw = cur_updated[0].bw
 
 class AS:
+    """
+    AS object to store ASN, origin and helper attribute when analyzing AS and IP. 
+    """
     def __init__(self, ASN = 0, origin = "NA", numIPv4 = 0):
         self.ASN = ASN 
         self.origin = origin
@@ -305,7 +315,7 @@ class AS:
 
 
 def load_consensus(p, year, month, date, hour):
-    '''Pulls relay data from pickled file'''
+    """Pulls relay data from processed consensus file"""
     # load .pickle file
     filename = p + year + '-' + month + '-' + date + '-' + hour + '-processed.pickle'
     # print(filename )
@@ -328,7 +338,7 @@ def load_consensus(p, year, month, date, hour):
 
 
 def datespan(s, e, delta=timedelta(hours=1)):
-    '''Function to iterate through each hour in a given timespan'''
+    """Function to iterate through each hour in a given timespan"""
     # from https://stackoverflow.com/questions/153584/how-to-iterate-over-a-timespan-after-days-hours-weeks-and-months
     cd = s
     while cd < e:
@@ -337,6 +347,9 @@ def datespan(s, e, delta=timedelta(hours=1)):
 
 
 def check16(ip1, ip2):
+    """
+    helper function to check if 2 IP address belongs to the same /16 prefix 
+    """
     ip1 = ip1.split('.')
     ipBin1 = ""
     for oct in ip1:
@@ -354,14 +367,14 @@ def check16(ip1, ip2):
     return True
 
 def rand_date(now, interval):
-    '''Random time b/t now and INTERVAL in the past; parameters: now (datetime); interval (num. days)'''
+    """Random time b/t now and INTERVAL in the past; parameters: now (datetime); interval (num. days)"""
     num_hours = interval * 24
     rand_hour = randrange(num_hours)
     return now - timedelta(hours=rand_hour)
 
 
 def tsplot(x, y, ax, n=20, percentile_min=1, percentile_max=99, color='r', plot_mean=True, plot_median=False, line_color='k', **kwargs):
-    '''Plots average and two percentile bands (IQR & 90%) on axis ax'''
+    """Plots average and two percentile bands (IQR & 90%) on axis ax"""
     # calculate the lower and upper percentile groups, skipping 50 percentile
     perc1 = np.percentile(y, np.linspace(percentile_min, 50, num=n, endpoint=False), axis=0)
     perc2 = np.percentile(y, np.linspace(50, percentile_max, num=n + 1)[1:], axis=0)
@@ -380,7 +393,7 @@ def tsplot(x, y, ax, n=20, percentile_min=1, percentile_max=99, color='r', plot_
 
 # slow function ?
 def calculate_total_bw(clients):
-    '''Calculates the total network bandwidth at a given hour'''
+    """Calculates the total network bandwidth at a given hour"""
     total_bw = 0
     for cg in CUR_GUARDS:
         for client in clients:
@@ -390,6 +403,7 @@ def calculate_total_bw(clients):
     return total_bw
 
 def check_rov(asn):
+    """use ROV set to check if an ASN if inside the covered set"""
     global ROVset
     return asn in ROVset
 

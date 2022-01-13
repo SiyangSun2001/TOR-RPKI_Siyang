@@ -33,12 +33,23 @@ def barPlot():
     plt.legend()
     plt.savefig('barplot.png')
 
-def scatter():
+def scatter(LBfile, RRfile):
+    """
+    graphes the relationship between load balance of the percent of ROA ROV matching. 
+    each dot in the scatter plot represent one parameter and its LB and ROA_ROV performance. The 
+    graph is saved as scatter.png in the current directory. Input file are obtained from optimizeParam.py
+    example call: scatter('PermLBResult.pickle', 'PermROA_ROVResult.pickle')
 
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermLBResult.pickle', 'rb') as f:
+    :param LBfile: (string) filename of the load balance pickled file 
+    :param RRfile: (string) filename of the ROA_ROV matching pickled file 
+    """
+    with open(LBfile, 'rb') as f:
         LB = pickle.load(f)
-    print(len(LB))
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermROA_ROVResult.pickle', 'rb') as f:
+    #LB: a list of list containing parameter and LB of that parameter
+    #e.g. [[0.6, 0.4, 1], 0.987646]
+            #param         LB 
+
+    with open(RRfile, 'rb') as f:
         roaROV = pickle.load(f)
     
 
@@ -58,16 +69,25 @@ def scatter():
     plt.xlabel('ROA ROV matching')
     plt.ylabel('Load Balance Expected Value')
     plt.title('Load Balance v.s. ROA ROV matches for Qualified Param (Normal Coverage)')
-    # plt.savefig('sctter.png')
+    plt.savefig('scatter.png')
 
 
 
-def scatterWload(networkLoad):
+def scatterWload(LBfile, RRfile, networkLoad):
+    """
+    same function as the scatter(), but draws a performance threshold for different network load. 
+    Parameters above the benchmark means that at the specific network load, these parameters will not affect the load balance and 
+    cause congestion comparing to vanilla TOR. 
 
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermLBResult.pickle', 'rb') as f:
+    :param LBfile: (string) filename of the load balance pickled file 
+    :param RRfile: (string) filename of the ROA_ROV matching pickled file 
+    :param networkLoad: (float) how much of the total possible bandwith are used in the TOR network 
+
+    """
+    with open(LBfile, 'rb') as f:
         LB = pickle.load(f)
         
-    with open('/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermROA_ROVResult.pickle', 'rb') as f:
+    with open(RRfile, 'rb') as f:
         roaROV = pickle.load(f)
     
 
@@ -94,4 +114,4 @@ def scatterWload(networkLoad):
     plt.legend()
     plt.savefig('load'+ str(networkLoad) + 'sctter.png')
 # scatterWload(0.9)
-scatter()
+#scatter()

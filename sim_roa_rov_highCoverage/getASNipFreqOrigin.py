@@ -164,7 +164,7 @@ def getAllAS3():
     #open the route view data
     #IP address -> ASN map 
     #https://www.caida.org/catalog/datasets/routeviews-prefix2as/#H2838
-    with open("/home/siyang/research/tor-rpki/routeviews-rv2-20210722-0200.pfx2as") as tsv:
+    with open("../routeviews-rv2-20210722-0200.pfx2as") as tsv:
         #retrieve the tab separated data 
         for line in csv.reader(tsv, dialect = "excel-tab"):
 
@@ -206,7 +206,7 @@ def preprocess_asn_origin():
     #https://www.caida.org/catalog/datasets/as-organizations/
     asn_orgID  =dict()
     
-    with open('/home/siyang/research/tor-rpki/20210701.as-org2info.txt') as f1:
+    with open('../20210701.as-org2info.txt') as f1:
         for line in f1:
             if not (line.startswith("#")):
                 tempList = line.split('|')

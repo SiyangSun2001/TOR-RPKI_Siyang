@@ -5,7 +5,16 @@ import statistics
 
 
 def get_exit_distribution(start_date, end_date):
+    """
+    analyze the exit relay distribution in a duration of time using the processed pickles 
+    each consensus file is processed using the analyze_consensus function, then the arithmetic mean is taken 
+    of the exit&guard, just exit and nonExit percentage. 
 
+    :param start_date: (datetime object) start of the period to be analyzed 
+    :param end_date: (datetime object) end of the period to be analyzed 
+
+    :return: prints out the averaged stats for each type of exit relay 
+    """
     print("running")
     p = os.getcwd()
     path = os.path.split(p)[0]
@@ -24,7 +33,19 @@ def get_exit_distribution(start_date, end_date):
         nonExitGuardls.append(consensus[2])
     print('exit and guard', '   just exit',  '  neither')
     print(statistics.mean(exit_guardls), statistics.mean(exitls),  statistics.mean(nonExitGuardls))
+
 def analyze_consensus(p, year, month, date, hour):
+    """
+    tally up the number of relay tagged with exit, exit&guard, non-exit in processed consensus file 
+
+    :param p: (string) path to the processed consensus directory 
+    :param year: (string) year of consensus file 
+    :param month: (string) month of consensus file 
+    :param date: (string) date of consensus file 
+    :param hour: (string) hour of consensus file
+
+    :return: (list) return a list containing percent of exit&guard, percent of just exit and percent of nonExit.
+    """
     filename = p + year + '-' + month + '-' + date + '-' + hour + '-processed.pickle'
     try:
         file = open(filename, 'rb')
@@ -46,6 +67,9 @@ def analyze_consensus(p, year, month, date, hour):
     return [exit_guard/len(rs), exit/len(rs),nonExit/len(rs)]
 
 def main(args):
+    """
+    main function that drives the exit relay analyze, so user could provide command line arguments for the duration of the analyze
+    """
     startdate = '2020-09-01-00'
     enddate = '2020-09-01-02'
     sd = startdate.split('-')

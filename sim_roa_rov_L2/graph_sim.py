@@ -3,7 +3,14 @@ import matplotlib.pyplot as plt
 
 
 def graph_roaCovered_cdf(pfile1, pfile2, pfile3, pfile4, graphName):
-   
+           """
+        function used to graph ROA coverage of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+        generater pickle file in guard_sim.py graph_ROACoverage_CDF(). 
+        
+        :param pfile1: (string) name to pickle file for 1 simulation, same for the other 3 
+        :param graphName: (string) name of the resulting graph  
+
+        """
 
         file = open('shortPickle/'+pfile1, 'rb')
         xd50 = pickle.load(file)
@@ -39,7 +46,14 @@ def graph_roaCovered_cdf(pfile1, pfile2, pfile3, pfile4, graphName):
 
 
 def graph_LB_cdf(pfile1, pfile2, pfile3, pfile4, graphName):
+                   """
+        function used to graph load balance of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+        generater pickle file in guard_sim.py graph_LB_CDF(). 
         
+        :param pfile1: (string) name to pickle file for 1 simulation, same for the other 3 
+        :param graphName: (string) name of the resulting graph  
+
+        """
 
         file = open('shortPickle/'+pfile1, 'rb')
         xd50 = pickle.load(file)
@@ -75,6 +89,14 @@ def graph_LB_cdf(pfile1, pfile2, pfile3, pfile4, graphName):
 
 
 def graph_roa_rov_matching(pickleLS):
+                           """
+        function used to graph ROA ROV matching of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+        generater pickle file in guard_sim.py graph_roa_rov_matching(). 
+        
+        :param pfile1: (string) name to pickle file for 1 simulation, same for the other 3 
+        :param graphName: (string) name of the resulting graph  
+
+        """
         plt.xlabel('Time by the hour')
         plt.ylabel('Percent of Client that has ROA and ROV matching')
         plt.title('Tor Percent of Client with ROA and ROV matching 1000 Clients')
@@ -96,4 +118,4 @@ def graph_roa_rov_matching(pickleLS):
 
 
 
-graph_roaCovered_cdf('0.5%ROAshort.pickle', '0.6%ROAshort.pickle', '0.7%ROAshort.pickle', 'VanillaROAshort.pickle', 'latexDiscountROA')
+# graph_roaCovered_cdf('0.5%ROAshort.pickle', '0.6%ROAshort.pickle', '0.7%ROAshort.pickle', 'VanillaROAshort.pickle', 'latexDiscountROA')

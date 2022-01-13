@@ -30,7 +30,9 @@ file =  open('ASNwROV.pickle', 'rb') #open a file where a list of ASN with ROV i
 ROVset = pickle.load(file)
 file.close()
 
-
+"""
+Same structure as the util.py file but adapted to simulate the exit relay selection process
+"""
 
 class Server:
     #new Server object to store relay information from the new source of descriptor 
