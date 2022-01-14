@@ -21,7 +21,7 @@ GUARDS = set()          # set of all guards in current consensus
 CUR_GUARDS = dict()     # current guard relays in use (Guard, num_clients)
 WGD = 0                 # bandwidth weight for guard exits
 WGG = 0                 # bandwidth weight for guards
-file =  open('ASNwROVHigh.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
+file =  open('/home/siyang/research/ClonedGitRepo/TOR-RPKI_Siyang/sim_roa_rov_highCoverage/ASNwROVHigh.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
 ROVset = pickle.load(file)
 file.close()
 

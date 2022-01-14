@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="projection module" href="projection.html" /><link rel="prev" title="preprocess_consensus module" href="preprocess_consensus.html" />
 
     <meta name="generator" content="sphinx-4.3.0, furo 2022.01.02"/>
         <title>preprocess_consensusNew module - TOR-RPKI 0.1 documentation</title>
@@ -154,7 +154,44 @@
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
-  
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">preprocess_consensusNew module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="analyzeOptParam.html">analyzeOptParam module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distributeUser.html">distributeUser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exitRelay.html">exitRelay module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="familyCheck2.html">familyCheck2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getASNipFreqOrigin.html">getASNipFreqOrigin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getExpectedValue.html">getExpectedValue module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sim.html">graph_sim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guard_simExit.html">guard_simExit module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizeParam.html">optimizeParam module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ROA_ROVDistribution.html">ROA_ROVDistribution module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
+</ul>
+</li>
+</ul>
+
 </div>
 </div>
       </div>
@@ -179,65 +216,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="module-preprocess_consensusNew">
-<span id="preprocess-consensusnew-module"></span><h1>preprocess_consensusNew module<a class="headerlink" href="#module-preprocess_consensusNew" title="Permalink to this headline">¶</a></h1>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.archive_consensus">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">archive_consensus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.archive_consensus" title="Permalink to this definition">¶</a></dt>
-<dd><p>Pulls relay info from consensus file
-helper for pickle_consensus</p>
-<p>year : (str) ‘year’
-month : (str) ‘mm’
-date : (str) ‘dd’
-hour : (str) ‘hr’</p>
-<p>list of Relay objects, (int) wgd, (int), wgg</p>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.coverage_dict">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">coverage_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv4s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv6s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_pickle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.coverage_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>uses roa csv file downloaded from <a class="reference external" href="https://rpki-validator.ripe.net/roas">https://rpki-validator.ripe.net/roas</a>
-if make_pickle = True, creates coveragev4.pickle and coveragev6.pickle to be used in update_consensus_pickle</p>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.get_all_ips">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">get_all_ips</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.get_all_ips" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.get_pre_asn">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">get_pre_asn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ipv4s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv6s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_pickle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">existing_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.get_pre_asn" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.get_roas">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">get_roas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.get_roas" title="Permalink to this definition">¶</a></dt>
-<dd><p>get roas from csv file
-returns two lists of lists
-[ip, max length, prefix length]</p>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.load_consensus">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">load_consensus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.load_consensus" title="Permalink to this definition">¶</a></dt>
-<dd><p>pulls relay data from pickled file</p>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.main">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.parse_arguments">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">parse_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.parse_arguments" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.pickle_consensus">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">pickle_consensus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gen_all_ip_pickles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.pickle_consensus" title="Permalink to this definition">¶</a></dt>
-<dd><p>creates .pickle for each consensus
-if gen_all_ip_pickles = True, creates all-ips.pickle for all ips b/t start and end date
-requires directory called archive_pickles to put consensus pickles in</p>
-</dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="preprocess_consensusNew.update_consensus_pickle">
-<span class="sig-prename descclassname"><span class="pre">preprocess_consensusNew.</span></span><span class="sig-name descname"><span class="pre">update_consensus_pickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v4coverage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">v6coverage</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv4_asns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv6_asns</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#preprocess_consensusNew.update_consensus_pickle" title="Permalink to this definition">¶</a></dt>
-<dd><p>updates allguards.pickle to contain ROA coverage</p>
-</dd></dl>
+          <section id="preprocess-consensusnew-module">
+<h1>preprocess_consensusNew module<a class="headerlink" href="#preprocess-consensusnew-module" title="Permalink to this headline">¶</a></h1>
 </section>
 
         </article>
@@ -245,8 +225,26 @@ requires directory called archive_pickles to put consensus pickles in</p>
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="projection.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">projection module</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="preprocess_consensus.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">preprocess_consensus module</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">

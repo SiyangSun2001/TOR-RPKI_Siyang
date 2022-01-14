@@ -11,13 +11,13 @@ cweights = list(UserPerCountry.values())
 
 def get_prefix_addresses_map():
     #maps prefix e.g. /19, /18, to the number of possible client within this prefix 
-    """
+    '''
     return a map of IP prefix to number of possible users. 
     used to quickly sum up the number of possible IPv4 announced within an AS 
     
     /32 -> 0 client 
     /31 -> 2 clients 
-    """
+    '''
     prefixMap = dict()
     for i in range(0,33):
         if 2**(32-i) - 2 > 0:
@@ -96,7 +96,7 @@ def coverage_dict(roas, ipv4s, make_pickle=False):
 
 
 def assignCountry(numUsers, countries, cweights, selection_algo):
-    """
+    '''
     generate the desired number of users and assign country randomly to each client based on the TOR user per country stats. 
     Also assigns guard selection algo to each client. Both countries and cweights are global variable declared at the beginning of 
     the file. 
@@ -107,7 +107,7 @@ def assignCountry(numUsers, countries, cweights, selection_algo):
     :param selection_algo: (string) selection algorithm for guards, choose from vanilla, matching or input the discount value (e.g. 0.9)
 
     :return: (list) a list of client objects with country and selection algo assigned
-    """
+    '''
     chosenCountry =  random.choices(countries, weights = cweights, k =  numUsers) #choose country based on tor's user / country data weight
     clientList  =[] # list populated with client obj filled in with origin 
 
@@ -119,7 +119,7 @@ def assignCountry(numUsers, countries, cweights, selection_algo):
     return clientList
 
 def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickle = True):
-    """
+    '''
     Generate client object with countries and ASN assigned to each. The ASN are assigned by choosing randomly within the client's 
     country's ASN. The weight of the ASN selection process is based on which AS announce the most IP addresses. After the AS is assigned to client,
     an IP address within the AS is randomly assigned to the client. 
@@ -132,7 +132,7 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
     :param make_pickle: (boolean) specify whether to make coverage dict for future use
 
     :return: (list) a list of client objects with country, ASN, roa/rov coverage, and selection algo assigned
-    """
+    '''
 
     prefixHosts = get_prefix_addresses_map() # prefix -> number of ip address
     clientList = assignCountry(numUsers, countries, cweights, selection_algo)
@@ -229,7 +229,7 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
 
 
 def check_roa_pre(roaFile):
-    """
+    '''
     make an indirect dictionary to check for roa coverage based on IP address. This indirect dictionary works by assigning all ROA coverage information 
     with the same first octet in the same dictionary entry. In this way, to check an IP address' coverage, the program only need to iterate through 
     ROA entry of the same first octet, thus it will decrease the runtime of check up. 
@@ -237,7 +237,7 @@ def check_roa_pre(roaFile):
     :param roaFile: (string) filename to the .csv file containing ROA info 
 
     :return: (dictionary) indirect dictionary, octet -> [list of roa coverage info]
-    """
+    '''
     roaDict = dict() #octet -> [list of roa coverage info]
     for i in range(1,256):
         roaDict[str(i)] = []
@@ -251,14 +251,14 @@ def check_roa_pre(roaFile):
     return roaDict
 
 def check_roa(client, roaDict):
-    """
+    '''
     returns the ROA coverage info using the indirect dictionary created above. 
 
     :param client: client object that need coverage check  
     :param roaDict: indirect dictionary created using the check_roa_pre() function 
 
     :return: (boolean) true or false value indicating the ROA coverage status of the client 
-    """
+    '''
     prefixes = roaDict[client.ipaddress.split('.')[0]]
 
     for prefix in prefixes:
@@ -272,9 +272,9 @@ def check_roa(client, roaDict):
     return False
 
 def check_roa_debug(cip, cASN, cprefix, roaDict):
-    """
+    '''
     debug function for the indirect ROA coverage check method 
-    """
+    '''
     prefixes = roaDict[cip.split('.')[0]]
 
     for prefix in prefixes:
@@ -393,7 +393,8 @@ def check_roa_debug(cip, cASN, cprefix, roaDict):
 
 
 def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, csvfile):
-    """
+
+    '''
     primary function used to make customized client objects based the provided roa, rov coverage.
     This function makes a client object, assign country, ASN, ip address, check to see if the coverage category still need this kind of client, if in need append to the result list else discard the client and start over again. 
     Because the function randomly assigns country, ASN, etc and the roa coverage stems from these info. We cannot specify in making a client having certain coverage. So we just keep making new client until every coverage category has been fulfilled.
@@ -409,7 +410,7 @@ def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, 
     
     :return: (list) list of client with the specified coverage and selection algo
     
-    """
+    '''
     global cweights
     global countries
     #pull in country data as global variable 

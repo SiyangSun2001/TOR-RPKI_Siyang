@@ -14,6 +14,8 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('..'))
 sys.path.insert(0, os.path.abspath('../sim_roa_L1'))
+sys.path.insert(0, os.path.abspath('../sim_roa_rov_L2'))
+sys.path.insert(0, os.path.abspath('../sim_roa_rov_highCoverage'))
 
 
 # -- Project information -----------------------------------------------------

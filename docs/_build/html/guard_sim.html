@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="util module" href="util.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="TOR-RPKI_Siyang" href="L2Sim.html" /><link rel="prev" title="TOR-RPKI_Siyang" href="L1Sim.html" />
 
     <meta name="generator" content="sphinx-4.3.0, furo 2022.01.02"/>
         <title>guard_sim module - TOR-RPKI 0.1 documentation</title>
@@ -156,13 +156,38 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">guard_sim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="analyzeOptParam.html">analyzeOptParam module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="distributeUser.html">distributeUser module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="exitRelay.html">exitRelay module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="familyCheck2.html">familyCheck2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getASNipFreqOrigin.html">getASNipFreqOrigin module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="getExpectedValue.html">getExpectedValue module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="graph_sim.html">graph_sim module</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">guard_sim module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guard_simExit.html">guard_simExit module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="optimizeParam.html">optimizeParam module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ROA_ROVDistribution.html">ROA_ROVDistribution module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
 </ul>
 </li>
 </ul>
@@ -196,19 +221,24 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="guard_sim.main">
 <span class="sig-prename descclassname"><span class="pre">guard_sim.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#guard_sim.main" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>main function of the guard simulator. Uses vanilla Tor guard selection
+algorithm to simulate the selection process over a time duration and output a 
+graph named L1Graph.png containing the load balance, client roa coverage etc for the simulated network.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start_date</strong> – (str) start date in year-mo-da-hr format</p></li>
+<li><p><strong>end_date</strong> – (str) end date in year-mo-da-hr format</p></li>
+<li><p><strong>num_clients</strong> – (int) the number of client objects for the simulation, larger number will reflect a more accurate performance but will take</p></li>
+</ul>
+</dd>
+</dl>
+<p>longer time to process</p>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="guard_sim.parse_arguments">
 <span class="sig-prename descclassname"><span class="pre">guard_sim.</span></span><span class="sig-name descname"><span class="pre">parse_arguments</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#guard_sim.parse_arguments" title="Permalink to this definition">¶</a></dt>
-<dd><p>main function of the guard sim</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>args</strong> – command line argument</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>parsed input</p>
-</dd>
-</dl>
+<dd><p>parses command line arguments into variable to be used in the main function</p>
 </dd></dl>
 </section>
 
@@ -217,15 +247,23 @@
       <footer>
         
         <div class="related-pages">
-          
-          <a class="prev-page" href="util.html">
+          <a class="next-page" href="L2Sim.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">TOR-RPKI_Siyang</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="L1Sim.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">util module</div>
+                <div class="title">TOR-RPKI_Siyang</div>
                 
               </div>
             </a>
