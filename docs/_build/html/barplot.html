@@ -215,8 +215,40 @@
           </label>
         </div>
         <article role="main">
-          <section id="barplot-module">
-<h1>barplot module<a class="headerlink" href="#barplot-module" title="Permalink to this headline">¶</a></h1>
+          <section id="module-barplot">
+<span id="barplot-module"></span><h1>barplot module<a class="headerlink" href="#module-barplot" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="barplot.scatter">
+<span class="sig-prename descclassname"><span class="pre">barplot.</span></span><span class="sig-name descname"><span class="pre">scatter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LBfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RRfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#barplot.scatter" title="Permalink to this definition">¶</a></dt>
+<dd><p>graphes the relationship between load balance of the percent of ROA ROV matching. 
+each dot in the scatter plot represent one parameter and its LB and ROA_ROV performance. The 
+graph is saved as scatter.png in the current directory. Input file are obtained from optimizeParam.py
+example call: scatter(‘PermLBResult.pickle’, ‘PermROA_ROVResult.pickle’)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LBfile</strong> – (string) filename of the load balance pickled file</p></li>
+<li><p><strong>RRfile</strong> – (string) filename of the ROA_ROV matching pickled file</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="barplot.scatterWload">
+<span class="sig-prename descclassname"><span class="pre">barplot.</span></span><span class="sig-name descname"><span class="pre">scatterWload</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LBfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">RRfile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">networkLoad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#barplot.scatterWload" title="Permalink to this definition">¶</a></dt>
+<dd><p>same function as the scatter(), but draws a performance threshold for different network load. 
+Parameters above the benchmark means that at the specific network load, these parameters will not affect the load balance and 
+cause congestion comparing to vanilla TOR.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LBfile</strong> – (string) filename of the load balance pickled file</p></li>
+<li><p><strong>RRfile</strong> – (string) filename of the ROA_ROV matching pickled file</p></li>
+<li><p><strong>networkLoad</strong> – (float) how much of the total possible bandwith are used in the TOR network</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>

@@ -4,14 +4,14 @@ from itertools import permutations
 import itertools
 
 def intersection(lst1, lst2):
-    """
+    '''
     return the intersection of two lists
     :param lst1: (list) first input list
     :param lst2: (list) second input list 
 
     :return: (list) intersect of lst1 and lst2
 
-    """
+    '''
     lst3 = [value for value in lst1 if value in lst2]
     return lst3
 

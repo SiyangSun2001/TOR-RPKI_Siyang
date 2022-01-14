@@ -21,13 +21,14 @@ def change_client_matching_param(paramls, clients):
 #give the permutation of parameters, the pool is the possible value to choose from 
 #repeat is the number if param to permutate. 
 def get_param_Permutation(pool):
-        """
+    """
     given the possible values and number of item in each choice, return all possible permutations
 
     :param pool: *iterable, list, set or string etc 
 
     :return: (list) a list of the all possible permutations  
     """
+
     result = []
     for j in itertools.product(pool, repeat=2) :
         result.append(list(j))
@@ -178,7 +179,7 @@ def get_LoadBalance_Matching_multiParam(consensus_date, ClientFile, paramPermuta
 
 #get roa rov matching rate from multiple parameter 
 def get_roarov_matching_multiParam(consensus_date, ClientFile, perm):
-        """
+    """
     run ROA ROV matching simulation on same client file and consensus file, but each time the parameter for guard selection are different. 
 
     :param consensus_date: (string) date for the consensus file to be used in the simulation 

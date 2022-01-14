@@ -215,8 +215,109 @@
           </label>
         </div>
         <article role="main">
-          <section id="optimizeparam-module">
-<h1>optimizeParam module<a class="headerlink" href="#optimizeparam-module" title="Permalink to this headline">¶</a></h1>
+          <section id="module-optimizeParam">
+<span id="optimizeparam-module"></span><h1>optimizeParam module<a class="headerlink" href="#module-optimizeParam" title="Permalink to this headline">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.change_client_matching_param">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">change_client_matching_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paramls</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clients</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.change_client_matching_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>helper function to change client’s discount parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>paramls</strong> – list for the parameters: roa, rov, neither discount</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.get_LoadBalance_Matching_multiParam">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">get_LoadBalance_Matching_multiParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">paramPermutations</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.get_LoadBalance_Matching_multiParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>run load balance simulation on same client file and consensus file, but each time the parameter for guard selection are different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date for the consensus file to be used in the simulation</p></li>
+<li><p><strong>ClientFile</strong> – (string) path to the client file used in simulation</p></li>
+<li><p><strong>paramPermutation</strong> – (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) return a list of Load Balance result for each of the parameter, each entry has following format: [param, avgLB]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.get_consensus_data">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">get_consensus_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.get_consensus_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>draw percent roa, ROA ROV match, ROV from a consensus file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – path to consensus file</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>print out the above specs on a consensus</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.get_param_Permutation">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">get_param_Permutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.get_param_Permutation" title="Permalink to this definition">¶</a></dt>
+<dd><p>given the possible values and number of item in each choice, return all possible permutations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pool</strong> – <a href="#id1"><span class="problematic" id="id2">*</span></a>iterable, list, set or string etc</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) a list of the all possible permutations</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.get_proa_multiparam">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">get_proa_multiparam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.get_proa_multiparam" title="Permalink to this definition">¶</a></dt>
+<dd><p>run percent of client w/ ROA coverage simulation on same client file and consensus file, but each time the parameter for guard selection are different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date for the consensus file to be used in the simulation</p></li>
+<li><p><strong>ClientFile</strong> – (string) path to the client file used in simulation</p></li>
+<li><p><strong>perm</strong> – (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) return a list of percent ROA coverage result for each of the parameter, each entry has following format: [param, %ROA covered]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.get_roarov_matching_multiParam">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">get_roarov_matching_multiParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ClientFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">perm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.get_roarov_matching_multiParam" title="Permalink to this definition">¶</a></dt>
+<dd><p>run ROA ROV matching simulation on same client file and consensus file, but each time the parameter for guard selection are different.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date for the consensus file to be used in the simulation</p></li>
+<li><p><strong>ClientFile</strong> – (string) path to the client file used in simulation</p></li>
+<li><p><strong>perm</strong> – (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) return a list of ROA ROV matching result for each of the parameter, each entry has following format: [param, percent of ROA ROV matching]</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="optimizeParam.param_multi_run">
+<span class="sig-prename descclassname"><span class="pre">optimizeParam.</span></span><span class="sig-name descname"><span class="pre">param_multi_run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">paramfname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">repeat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fromPickle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#optimizeParam.param_multi_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>run each parameter in a list multiple times and get the mean of each parameter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>paramfname</strong> – name to pickled parameter if fromPickle = True, else input a list of possible parameters</p></li>
+<li><p><strong>repeat</strong> – (int) number of time to repeat for each parameter</p></li>
+<li><p><strong>fromPickle</strong> – (boolean) true if select parameter list from pickled file, otherwise false</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>
