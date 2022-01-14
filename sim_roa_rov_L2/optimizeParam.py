@@ -8,6 +8,11 @@ import statistics
 #takes in parameter list and change each client's matching select algo's param 
 #param list: [rovDiscount, roaDiscount, neitherDiscount]
 def change_client_matching_param(paramls, clients):
+    """
+    helper function to change client's discount parameter
+
+    :param paramls: list for the parameters: roa, rov, neither discount 
+    """
     for c in clients:
         c.rovDiscount = paramls[0]
         c.roaDiscount = paramls[1]
@@ -16,6 +21,14 @@ def change_client_matching_param(paramls, clients):
 #give the permutation of parameters, the pool is the possible value to choose from 
 #repeat is the number if param to permutate. 
 def get_param_Permutation(pool):
+    """
+    given the possible values and number of item in each choice, return all possible permutations
+
+    :param pool: *iterable, list, set or string etc 
+
+    :return: (list) a list of the all possible permutations  
+    """
+
     result = []
     for j in itertools.product(pool, repeat=2) :
         result.append(list(j))
@@ -25,13 +38,22 @@ def get_param_Permutation(pool):
 
 
 def get_LoadBalance_Matching_multiParam(consensus_date, ClientFile, paramPermutations):
+    """
+    run load balance simulation on same client file and consensus file, but each time the parameter for guard selection are different. 
+
+    :param consensus_date: (string) date for the consensus file to be used in the simulation 
+    :param ClientFile: (string) path to the client file used in simulation 
+    :param paramPermutation: (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)
+
+    :return: (list) return a list of Load Balance result for each of the parameter, each entry has following format: [param, avgLB]
+    """
     #get the weight of relays assigned by all clients 
     #average all of client weight / vanilla weight 
 
 
 
     #path for consensus file 
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -157,6 +179,15 @@ def get_LoadBalance_Matching_multiParam(consensus_date, ClientFile, paramPermuta
 
 #get roa rov matching rate from multiple parameter 
 def get_roarov_matching_multiParam(consensus_date, ClientFile, perm):
+    """
+    run ROA ROV matching simulation on same client file and consensus file, but each time the parameter for guard selection are different. 
+
+    :param consensus_date: (string) date for the consensus file to be used in the simulation 
+    :param ClientFile: (string) path to the client file used in simulation 
+    :param perm: (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)
+
+    :return: (list) return a list of ROA ROV matching result for each of the parameter, each entry has following format: [param, percent of ROA ROV matching]
+    """
 
     #open client file and prepare path to consensus 
     try:
@@ -228,6 +259,15 @@ def get_roarov_matching_multiParam(consensus_date, ClientFile, perm):
 
 #get the percent of client with a roa covered guard 
 def get_proa_multiparam(consensus_date, ClientFile, perm):
+    """
+    run percent of client w/ ROA coverage simulation on same client file and consensus file, but each time the parameter for guard selection are different. 
+
+    :param consensus_date: (string) date for the consensus file to be used in the simulation 
+    :param ClientFile: (string) path to the client file used in simulation 
+    :param perm: (list) list of all parameters used in this simulation, could generate using get_param_Permutation(pool)
+
+    :return: (list) return a list of percent ROA coverage result for each of the parameter, each entry has following format: [param, %ROA covered]
+    """
     #open client file and prepare path for consensus 
     try:
         filec = open(ClientFile, 'rb')
@@ -278,20 +318,20 @@ def get_proa_multiparam(consensus_date, ClientFile, perm):
         resultls.append([p,roa_covered/num_clients])
     return resultls
 
-perm = get_param_Permutation((0.1,0.2,0.3,0.4,0.5,0.6, 0.7, 0.8, 0.9))
-print(len(perm))
+# perm = get_param_Permutation((0.1,0.2,0.3,0.4,0.5,0.6, 0.7, 0.8, 0.9))
+# print(len(perm))
 # for i in perm:
 #     i.append(1)
 
-# ROA_ROVResult = get_roarov_matching_multiParam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', perm)
+# ROA_ROVResult = get_roarov_matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
 # with open("PermROA_ROVResult.pickle", 'wb') as f:
 #     pickle.dump(ROA_ROVResult, f)
 # print("finish roa rov")
-# LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', perm)
+# LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
 # with open("PermLBResult.pickle", 'wb') as f:
 #     pickle.dump(LB, f)
 # print("finish LB")
-# pROA = get_proa_multiparam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', perm)
+# pROA = get_proa_multiparam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
 # with open("Perm_pROA_Result.pickle", 'wb') as f:
 #     pickle.dump(pROA, f)
 
@@ -300,6 +340,13 @@ print(len(perm))
 
 #run a list of param multiple times and get their mean 
 def param_multi_run(paramfname, repeat, fromPickle = True):
+    """
+    run each parameter in a list multiple times and get the mean of each parameter 
+
+    :param paramfname: name to pickled parameter if fromPickle = True, else input a list of possible parameters 
+    :param repeat: (int) number of time to repeat for each parameter 
+    :param fromPickle: (boolean) true if select parameter list from pickled file, otherwise false 
+    """
     if fromPickle:
         with open(paramfname, 'rb') as f:
             params = pickle.load(f)
@@ -312,9 +359,9 @@ def param_multi_run(paramfname, repeat, fromPickle = True):
         roaROVls = []
         LBls = []
         while count < repeat:
-            pROA = get_proa_multiparam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', [p])
-            roaROV = get_roarov_matching_multiParam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', [p])
-            LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/typicalTOR1000Clients.pickle', [p])
+            pROA = get_proa_multiparam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
+            roaROV = get_roarov_matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
+            LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
             pROAls.append(pROA[0][1])
             roaROVls.append(roaROV[0][1])
             LBls.append(LB[0][1])
@@ -326,6 +373,13 @@ def param_multi_run(paramfname, repeat, fromPickle = True):
 
 
 def get_consensus_data(file):
+    """
+    draw percent roa, ROA ROV match, ROV from a consensus file 
+
+    :param file: path to consensus file 
+
+    :return: print out the above specs on a consensus 
+    """
     with open(file, 'rb') as f:
         rs = pickle.load(f) #list of all relay objects
         WGD = pickle.load(f) #weight in the consensus

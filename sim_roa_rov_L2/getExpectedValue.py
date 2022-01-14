@@ -14,9 +14,17 @@ cweights = list(UserPerCountry.values())
 
 #function that takes in an consensus file & discount value, then return the expected value for choosing an ROA covered guard
 def get_Client_Coverage_ExpectedValue(consensus_date, discount):
+    """
+    find the expected value of choosing an ROA covered guard (ROAweight/totalWeight) given a specific consensus date and the discount applied to non_ROA guards. 
+    
 
+    :param consensus_date: (string) date of the consensus 
+    :param discount: (float) discount to non_ROA guard so it gets less likely to be chosen 
+
+    :return: ROAweight, total weight of relay with ROA, totalWeight, total weight of all relays 
+    """
     #path for processed pickle file
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -54,8 +62,18 @@ def get_Client_Coverage_ExpectedValue(consensus_date, discount):
 
 
 def get_LoadBalance_expectedValue(consensus_date, discount):
+    """
+    tallies up the weight using the vanilla calculation and again using the discount calculation. 
+    The expected load balance will be discountWeight/vanillaWeight. 
+
+    
+    :param consensus_date: (string) date of the consensus 
+    :param discount: (float) discount to non_ROA guard so it gets less likely to be chosen 
+
+    :return: discountWeight, total weight of relay with discount mutiplier, vanillaWeight, total weight of all relays using vanilla calculation
+    """
         #path for processed pickle file
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -98,6 +116,21 @@ def get_LoadBalance_expectedValue(consensus_date, discount):
 
 
 def get_LoadBalance_Matching(consensus_date, clientsFileName, roacsv, discountParams):
+    """
+    Tallies up weight in consensus using vanilla calculation as a reference point.
+    Then, each client in the list tallies up the weight in their coverage status. The result of indivudual 
+    client's weight in divided by the vanilla weight, which forms each client's individual 
+    load balance. The average load balance is calculated by taking the mean of each client's individual 
+    load balance. 
+
+    :param consensus_date: (string) date of the consensus 
+    :param clientsFileName: (string) path to the pickled file with clients 
+    :param roacsv: (string) path to the .csv file storing roa information (e.g. home/tor-rpki/20200913.csv)
+    :param discountParams: (list) list containing the 3 param for matching: [rovDiscount, roaDiscount, neitherDiscount]
+
+    return: prints out the expected value for load balance
+
+    """
     #get the weight of relays assigned by all clients 
     #average all of client weight / vanilla weight 
     rovDiscount = discountParams[0]
@@ -108,7 +141,7 @@ def get_LoadBalance_Matching(consensus_date, clientsFileName, roacsv, discountPa
         clients = pickle.load(f)
 
             #path for processed pickle file
-    p = '/home/siyang/research/tor-rpki/processed/' + consensus_date + '-processed.pickle'
+    p = '../processed/' + consensus_date + '-processed.pickle'
 
     #try to open the pickled file  
     try:
@@ -198,6 +231,14 @@ def get_LoadBalance_Matching(consensus_date, clientsFileName, roacsv, discountPa
 
     
 def get_expectVal_wdiffLoad(consensus_date):
+    """
+    graph the load balance with different network load using get_LoadBalance_Matching() 
+
+    :param consensus_date: (string) date of the consensus 
+
+    :return: graph of load balance with different network load 
+
+    """
     discount = np.linspace(0.5,1,25)
 
     load = [ 0.8, 0.9, 1] # list of different network load 

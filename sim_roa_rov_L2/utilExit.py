@@ -26,11 +26,14 @@ WGD = 0                 # bandwidth weight for guard exits
 WGG = 0    
 
              # bandwidth weight for guards
-file =  open('ASNwROV.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
+
+file =  open('/home/siyang/research/ClonedGitRepo/TOR-RPKI_Siyang/sim_roa_rov_L2/ASNwROV.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
 ROVset = pickle.load(file)
 file.close()
 
-
+"""
+Same structure as the util.py file but adapted to simulate the exit relay selection process
+"""
 
 class Server:
     #new Server object to store relay information from the new source of descriptor 
@@ -43,10 +46,10 @@ class Server:
         print(self.ip, "finger print: ", self.fp, "family: ", self.family)
         print("")
 #open the 2 dict obtained from familycheck2.py to use for family relation check 
-file =  open('fpTOserver.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
+file =  open('/home/siyang/research/ClonedGitRepo/TOR-RPKI_Siyang/sim_roa_rov_L2/fpTOserver.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
 fpTOserver = pickle.load(file)
 file.close()
-file =  open('ipTOfp.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
+file =  open('/home/siyang/research/ClonedGitRepo/TOR-RPKI_Siyang/sim_roa_rov_L2/ipTOfp.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
 ipTOfp = pickle.load(file)
 file.close()
 
