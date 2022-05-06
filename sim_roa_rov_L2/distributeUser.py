@@ -2,12 +2,14 @@ import random
 from utilExit    import *
 import pickle
 import ipaddress
+import pathlib
 
 #downloaded here:https://metrics.torproject.org/userstats-relay-table.html?start=2021-05-12&end=2021-08-10
 UserPerCountry = {'US': 0.2429, 'RU': 0.1543, 'DE': 0.07980000000000001, 'NL': 0.040999999999999995, 'FR': 0.0346, 'ID': 0.0277, 'GB': 0.0256, 'IN': 0.0254, 'UA': 0.0215, 'LT': 0.0178}
 countries = list(UserPerCountry.keys())
 cweights = list(UserPerCountry.values())
 
+# print(str(pathlib.Path(__file__).parent.resolve()))
 
 def get_prefix_addresses_map():
     #maps prefix e.g. /19, /18, to the number of possible client within this prefix 
@@ -147,7 +149,8 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
     #iterate through pickled file and group ASN by country and populate 2 dict
     #ASdict: origin-> list of AS
     #weightdict: origin -> number of IPv4 each AS announce (acts as the weight of the random selection)
-    file =  open('ASNnumIP.pickle', 'rb')
+    
+    file =  open(str(pathlib.Path(__file__).parent.resolve()) + '/ASNnumIP.pickle', 'rb')
     numIPdict = pickle.load(file) # open pickled file, ASN -> AS object with numIPv4 filled in 
     file.close()
     for i in numIPdict: 

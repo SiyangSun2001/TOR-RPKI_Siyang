@@ -156,20 +156,19 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">Preprocess Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">Level 1 Simulator with Vanilla Algorithm</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">Level 2 Simulator with Discount and Matching Algorithm</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="analyzeOptParam.html">analyzeOptParam module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
@@ -186,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">Level 2 Simulator with High ROA and ROV Coverage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
 </ul>
 </li>
@@ -219,58 +218,145 @@
           <section id="module-distributeUser">
 <span id="distributeuser-module"></span><h1>distributeUser module<a class="headerlink" href="#module-distributeUser" title="Permalink to this headline">¶</a></h1>
 <dl class="py function">
-<dt class="sig sig-object py" id="distributeUser.analyzeClientPickle">
-<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">analyzeClientPickle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.analyzeClientPickle" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.assignASN">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">assignASN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numUsers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cweights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_algo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roaFile</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_pickle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.assignASN" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Generate client object with countries and ASN assigned to each. The ASN are assigned by choosing randomly within the client’s 
+country’s ASN. The weight of the ASN selection process is based on which AS announce the most IP addresses. After the AS is assigned to client,
+an IP address within the AS is randomly assigned to the client.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numUsers</strong> – (int) number of clients generated</p></li>
+<li><p><strong>countries</strong> – (list) list of countries of possible TOR user origin</p></li>
+<li><p><strong>cweights</strong> – (list) weight of each country in the selection process.</p></li>
+<li><p><strong>selection_algo</strong> – (string) selection algorithm for guards, choose from vanilla, matching or input the discount value (e.g. 0.9)</p></li>
+<li><p><strong>roaFile</strong> – (string) filename to .csv file containing ROA information to check for roa coverage</p></li>
+<li><p><strong>make_pickle</strong> – (boolean) specify whether to make coverage dict for future use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) a list of client objects with country, ASN, roa/rov coverage, and selection algo assigned</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.assignCountry">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">assignCountry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numUsers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cweights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_algo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.assignCountry" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>generate the desired number of users and assign country randomly to each client based on the TOR user per country stats. 
+Also assigns guard selection algo to each client. Both countries and cweights are global variable declared at the beginning of 
+the file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>numUsers</strong> – (int) number of clients generated</p></li>
+<li><p><strong>countries</strong> – (list) list of countries of possible TOR user origin</p></li>
+<li><p><strong>cweights</strong> – (list) weight of each country in the selection process.</p></li>
+<li><p><strong>selection_algo</strong> – (string) selection algorithm for guards, choose from vanilla, matching or input the discount value (e.g. 0.9)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) a list of client objects with country and selection algo assigned</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.check_roa">
-<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">check_roa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">asn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.check_roa" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">check_roa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roaDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.check_roa" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the ROA coverage info using the indirect dictionary created above.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>client</strong> – client object that need coverage check</p></li>
+<li><p><strong>roaDict</strong> – indirect dictionary created using the check_roa_pre() function</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(boolean) true or false value indicating the ROA coverage status of the client</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py function">
+<dt class="sig sig-object py" id="distributeUser.check_roa_debug">
+<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">check_roa_debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cip</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cASN</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cprefix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roaDict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.check_roa_debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>debug function for the indirect ROA coverage check method</p>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.check_roa_pre">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">check_roa_pre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roaFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.check_roa_pre" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>make an indirect dictionary to check for roa coverage based on IP address. This indirect dictionary works by assigning all ROA coverage information 
+with the same first octet in the same dictionary entry. In this way, to check an IP address’ coverage, the program only need to iterate through 
+ROA entry of the same first octet, thus it will decrease the runtime of check up.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>roaFile</strong> – (string) filename to the .csv file containing ROA info</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(dictionary) indirect dictionary, octet -&gt; [list of roa coverage info]</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.coverage_dict">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">coverage_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roas</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ipv4s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">make_pickle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.coverage_dict" title="Permalink to this definition">¶</a></dt>
-<dd><p>uses roa csv file downloaded from <a class="reference external" href="https://rpki-validator.ripe.net/roas">https://rpki-validator.ripe.net/roas</a>
-if make_pickle = True, creates coveragev4.pickle and coveragev6.pickle to be used in update_consensus_pickle</p>
+<dd><p>given a list of IP addresses make a dictionary that maps IP address -&gt; roa coverage info, if 
+the IP is not covered IP -&gt; None. 
+format: IP -&gt;  [IPnetwork, max len, prefix len, ASN]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>roas</strong> – (string) filename to the .csv file for ROA</p></li>
+<li><p><strong>ipv4s</strong> – (list) list of IPv4 addresses that needs to know their ROA coverage</p></li>
+<li><p><strong>make_pickle</strong> – (boolean) specify whether the resulting dictionary will be pikled for future use</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="distributeUser.get_highCoverage_distribution">
-<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">get_highCoverage_distribution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">repeatTime</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.get_highCoverage_distribution" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.get_prefix_addresses_map">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">get_prefix_addresses_map</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.get_prefix_addresses_map" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>return a map of IP prefix to number of possible users. 
+used to quickly sum up the number of possible IPv4 announced within an AS</p>
+<p>/32 -&gt; 0 client 
+/31 -&gt; 2 clients</p>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.get_roas">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">get_roas</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.get_roas" title="Permalink to this definition">¶</a></dt>
-<dd><p>get roas from csv file
-returns two lists of lists
-[ip, max length, prefix length]</p>
+<dd><p>input a roa csv file and output a list of list containing each roa’s info 
+[IPnetwork, max len, prefix len, ASN]</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – (string) name to the .csv file containing ROA information</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) a nested list containing all ROA is the format: [IPnetwork, max len, prefix len, ASN]</p>
+</dd>
+</dl>
 </dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="distributeUser.get_user_wASN">
-<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">get_user_wASN</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">numUsers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">countries</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cweights</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">selection_algo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.get_user_wASN" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-<dl class="py function">
-<dt class="sig sig-object py" id="distributeUser.user_specified_client">
-<span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">user_specified_client</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roa_rov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numClients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_algo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roaFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.user_specified_client" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="distributeUser.user_specified_client2">
 <span class="sig-prename descclassname"><span class="pre">distributeUser.</span></span><span class="sig-name descname"><span class="pre">user_specified_client2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">roa</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roa_rov</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">neither</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">numClients</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">select_algo</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">csvfile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#distributeUser.user_specified_client2" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>primary function used to make customized client objects based the provided roa, rov coverage.
+This function makes a client object, assign country, ASN, ip address, check to see if the coverage category still need this kind of client, if in need append to the result list else discard the client and start over again. 
+Because the function randomly assigns country, ASN, etc and the roa coverage stems from these info. We cannot specify in making a client having certain coverage. So we just keep making new client until every coverage category has been fulfilled.
+The resulting list could be pickled for future use, so each run of simulation is using the same client list, thus the same roa,rov coverage situation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>roa</strong> – (int) the number of ROA covered clients</p></li>
+<li><p><strong>rov</strong> – (int) the number of ROV covered clients</p></li>
+<li><p><strong>roa_rov</strong> – (int) the number of ROA covered and ROV covered clients</p></li>
+<li><p><strong>neither</strong> – (int) the number of clients with no coverage</p></li>
+<li><p><strong>numClients</strong> – (int) total number of clients in the result list based on the above weights</p></li>
+<li><p><strong>selection_algo</strong> – (string) selection algorithm for guards, choose from vanilla, matching or input the discount value (e.g. 0.9)</p></li>
+<li><p><strong>csvfile</strong> – (string) filename to .csv file containing ROA information to check for roa coverage</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) list of client with the specified coverage and selection algo</p>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>

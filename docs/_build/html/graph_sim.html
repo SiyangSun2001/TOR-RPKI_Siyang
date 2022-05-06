@@ -156,20 +156,19 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">Preprocess Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">Level 1 Simulator with Vanilla Algorithm</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">Level 2 Simulator with Discount and Matching Algorithm</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="analyzeOptParam.html">analyzeOptParam module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
@@ -186,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">Level 2 Simulator with High ROA and ROV Coverage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
 </ul>
 </li>
@@ -221,15 +220,45 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="graph_sim.graph_LB_cdf">
 <span class="sig-prename descclassname"><span class="pre">graph_sim.</span></span><span class="sig-name descname"><span class="pre">graph_LB_cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfile1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graph_sim.graph_LB_cdf" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>function used to graph load balance of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+generater pickle file in guard_sim.py graph_LB_CDF().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pfile1</strong> – (string) name to pickle file for 1 simulation, same for the other 3</p></li>
+<li><p><strong>graphName</strong> – (string) name of the resulting graph</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="graph_sim.graph_roaCovered_cdf">
 <span class="sig-prename descclassname"><span class="pre">graph_sim.</span></span><span class="sig-name descname"><span class="pre">graph_roaCovered_cdf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pfile1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pfile4</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graphName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graph_sim.graph_roaCovered_cdf" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>function used to graph ROA coverage of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+generater pickle file in guard_sim.py graph_ROACoverage_CDF().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pfile1</strong> – (string) name to pickle file for 1 simulation, same for the other 3</p></li>
+<li><p><strong>graphName</strong> – (string) name of the resulting graph</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="graph_sim.graph_roa_rov_matching">
 <span class="sig-prename descclassname"><span class="pre">graph_sim.</span></span><span class="sig-name descname"><span class="pre">graph_roa_rov_matching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pickleLS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#graph_sim.graph_roa_rov_matching" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>function used to graph ROA ROV matching of multiple simulation onto 1 graph using pickle file made when running each simulation. 
+generater pickle file in guard_sim.py graph_roa_rov_matching().</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pfile1</strong> – (string) name to pickle file for 1 simulation, same for the other 3</p></li>
+<li><p><strong>graphName</strong> – (string) name of the resulting graph</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>

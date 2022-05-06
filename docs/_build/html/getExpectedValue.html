@@ -156,20 +156,19 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">Preprocess Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">Level 1 Simulator with Vanilla Algorithm</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">Level 2 Simulator with Discount and Matching Algorithm</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="analyzeOptParam.html">analyzeOptParam module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
@@ -186,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">Level 2 Simulator with High ROA and ROV Coverage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
 </ul>
 </li>
@@ -221,19 +220,69 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="getExpectedValue.get_Client_Coverage_ExpectedValue">
 <span class="sig-prename descclassname"><span class="pre">getExpectedValue.</span></span><span class="sig-name descname"><span class="pre">get_Client_Coverage_ExpectedValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getExpectedValue.get_Client_Coverage_ExpectedValue" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>find the expected value of choosing an ROA covered guard (ROAweight/totalWeight) given a specific consensus date and the discount applied to non_ROA guards.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date of the consensus</p></li>
+<li><p><strong>discount</strong> – (float) discount to non_ROA guard so it gets less likely to be chosen</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ROAweight, total weight of relay with ROA, totalWeight, total weight of all relays</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="getExpectedValue.get_LoadBalance_Matching">
 <span class="sig-prename descclassname"><span class="pre">getExpectedValue.</span></span><span class="sig-name descname"><span class="pre">get_LoadBalance_Matching</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">clientsFileName</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roacsv</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discountParams</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getExpectedValue.get_LoadBalance_Matching" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Tallies up weight in consensus using vanilla calculation as a reference point.
+Then, each client in the list tallies up the weight in their coverage status. The result of indivudual 
+client’s weight in divided by the vanilla weight, which forms each client’s individual 
+load balance. The average load balance is calculated by taking the mean of each client’s individual 
+load balance.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date of the consensus</p></li>
+<li><p><strong>clientsFileName</strong> – (string) path to the pickled file with clients</p></li>
+<li><p><strong>roacsv</strong> – (string) path to the .csv file storing roa information (e.g. home/tor-rpki/20200913.csv)</p></li>
+<li><p><strong>discountParams</strong> – (list) list containing the 3 param for matching: [rovDiscount, roaDiscount, neitherDiscount]</p></li>
+</ul>
+</dd>
+</dl>
+<p>return: prints out the expected value for load balance</p>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="getExpectedValue.get_LoadBalance_expectedValue">
 <span class="sig-prename descclassname"><span class="pre">getExpectedValue.</span></span><span class="sig-name descname"><span class="pre">get_LoadBalance_expectedValue</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">discount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getExpectedValue.get_LoadBalance_expectedValue" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>tallies up the weight using the vanilla calculation and again using the discount calculation. 
+The expected load balance will be discountWeight/vanillaWeight.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>consensus_date</strong> – (string) date of the consensus</p></li>
+<li><p><strong>discount</strong> – (float) discount to non_ROA guard so it gets less likely to be chosen</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>discountWeight, total weight of relay with discount mutiplier, vanillaWeight, total weight of all relays using vanilla calculation</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="getExpectedValue.get_expectVal_wdiffLoad">
 <span class="sig-prename descclassname"><span class="pre">getExpectedValue.</span></span><span class="sig-name descname"><span class="pre">get_expectVal_wdiffLoad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">consensus_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getExpectedValue.get_expectVal_wdiffLoad" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>graph the load balance with different network load using get_LoadBalance_Matching()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>consensus_date</strong> – (string) date of the consensus</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>graph of load balance with different network load</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="getExpectedValue.main">
 <span class="sig-prename descclassname"><span class="pre">getExpectedValue.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#getExpectedValue.main" title="Permalink to this definition">¶</a></dt>

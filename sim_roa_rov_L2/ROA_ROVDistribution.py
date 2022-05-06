@@ -30,7 +30,7 @@ def getROA_ROV_freq(numRuns, clientSize):
     return roa, rov, roa_rov, neither
                 
         
-roa, rov, roa_rov, neither = getROA_ROV_freq(30, 1000)
+# roa, rov, roa_rov, neither = getROA_ROV_freq(30, 1000)
 # with open('returnSpecs.pickle', 'wb') as f1:
 #     pickle.dump("the pickle for 50 run", f1)
 #     pickle.dump(roa, f1)
@@ -38,12 +38,12 @@ roa, rov, roa_rov, neither = getROA_ROV_freq(30, 1000)
 #     pickle.dump(roa_rov, f1)
 #     pickle.dump(neither, f1)
 
-f = open('returnSpecs.pickle', 'rb') 
-pickle.load(f)
-roa = pickle.load(f)
-rov = pickle.load(f)
-roa_rov = pickle.load(f)
-neither = pickle.load(f)
+# f = open('returnSpecs.pickle', 'rb') 
+# pickle.load(f)
+# roa = pickle.load(f)
+# rov = pickle.load(f)
+# roa_rov = pickle.load(f)
+# neither = pickle.load(f)
 
 # print(round(numpy.mean(roa)),round(numpy.mean(rov)),round(numpy.mean(roa_rov)),round(numpy.mean(neither)))
 # print(x)

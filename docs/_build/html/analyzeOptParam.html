@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ASNrov module" href="ASNrov.html" /><link rel="prev" title="TOR-RPKI_Siyang" href="L2Sim.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="ASNrov module" href="ASNrov.html" /><link rel="prev" title="Level 2 Simulator with Discount and Matching Algorithm" href="L2Sim.html" />
 
     <meta name="generator" content="sphinx-4.3.0, furo 2022.01.02"/>
         <title>analyzeOptParam module - TOR-RPKI 0.1 documentation</title>
@@ -156,20 +156,19 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="preprocess.html">Preprocess Consensus</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="preprocess_consensus.html">preprocess_consensus module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="preprocess_consensusNew.html">preprocess_consensusNew module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="projection.html">projection module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="upgradeIpASNMap.html">upgradeIpASNMap module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L1Sim.html">Level 1 Simulator with Vanilla Algorithm</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="guard_sim.html">guard_sim module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="util.html">util module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">TOR-RPKI_Siyang</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="L2Sim.html">Level 2 Simulator with Discount and Matching Algorithm</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">analyzeOptParam module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ASNrov.html">ASNrov module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="barplot.html">barplot module</a></li>
@@ -186,7 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="utilExit.html">utilExit module</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">TOR-RPKI_Siyang</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="L2HighCoverageSim.html">Level 2 Simulator with High ROA and ROV Coverage</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="modifyConsensus.html">modifyConsensus module</a></li>
 </ul>
 </li>
@@ -221,27 +220,89 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.Diff">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">Diff</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">li1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">li2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.Diff" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>return the difference of two lists
+:param lst1: (list) first input list
+:param lst2: (list) second input list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list) difference of lst1 and lst2</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.analyzeParam">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">analyzeParam</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">LBfilename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">roa_rovFilename</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ProaFilename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.analyzeParam" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>This function filters the performance of different parameter based on load balance
+ROA_ROV matching percentage, and percent of client with ROA coverage. All 3 performance 
+are measured separately then filtered using a cutoff point. Then, the programs find the
+parameter that passed all 3 of the performance cutoff. Finally, a table is printed with 
+parameters that passed all 3 bench marks. The input file into this function is obtained from the 
+optimizeParam.py file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>LBfilename</strong> – (string) filename to the pickled file containing load balance performance of all parameters</p></li>
+<li><p><strong>roa_rovFilename</strong> – (string) filename to the pickled file containing ROA ROV matching performance of all parameters</p></li>
+<li><p><strong>ProaFilename</strong> – (string) filename to the pickled file containing percent of client covered by ROA  performance of all parameters</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.get_fair_param">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">get_fair_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.get_fair_param" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>To avoid putting clients without ROA or ROV coverage in a worse position than in vanilla, we 
+want the neitherDiscount to be 1, so that clients with no coverage has the same chance of selecting 
+a ROA guard comparing to vanilla TOR. We want to achieve this because ROA guards could still provide 
+added security to the client even if the client has no ROA or ROV coverage in itself.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – (string) file name of pickled parameters</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) filter out all parameter with neitherDiscount != 1, return a list of</p>
+</dd>
+</dl>
+<p>parameter with neitherDiscount == 1.</p>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.get_max_param">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">get_max_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.get_max_param" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>find the parameter with the largest combined value in all 3 area of performance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file</strong> – (string) filename of the pickled file with parameter and performance specs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>prints out the max param with the performance value and parameter</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.get_param_Permutation">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">get_param_Permutation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pool</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.get_param_Permutation" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>given the possible values and number of item in each choice, return all possible permutations</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>pool</strong> – <a href="#id1"><span class="problematic" id="id2">*</span></a>iterable, list, set or string etc</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>(list) a list of the all possible permutations</p>
+</dd>
+</dl>
+</dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="analyzeOptParam.intersection">
 <span class="sig-prename descclassname"><span class="pre">analyzeOptParam.</span></span><span class="sig-name descname"><span class="pre">intersection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lst1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lst2</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#analyzeOptParam.intersection" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>return the intersection of two lists
+:param lst1: (list) first input list
+:param lst2: (list) second input list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>(list) intersect of lst1 and lst2</p>
+</dd>
+</dl>
+</dd></dl>
 </section>
 
         </article>
@@ -265,7 +326,7 @@
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">TOR-RPKI_Siyang</div>
+                <div class="title">Level 2 Simulator with Discount and Matching Algorithm</div>
                 
               </div>
             </a>
