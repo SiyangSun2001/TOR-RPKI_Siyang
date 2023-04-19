@@ -54,7 +54,7 @@ def get_roas(filename):
                 if 'AS' not in row[0]:
                     asn = row[0]
                 else:
-                    asn = row[2:]
+                    asn = row[0][2:]
                 ipv4s.append([ipv4, maxlen, prefixlen, asn])
             except ipaddress.AddressValueError: 
                 #ignore cases where the address is ipv6 
