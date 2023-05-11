@@ -6,9 +6,11 @@ import time
 import upgradeIpASNMap
 import os
 
-v4MAPDICT, v4QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v4()
-v6MAPDICT, v6QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v6()
+# v4MAPDICT, v4QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v4()
+# v6MAPDICT, v6QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v6()
 
+v4MAPDICT, v4QUICKDICT = None, None
+v6MAPDICT, v6QUICKDICT = None, None
 # place archived consensuses in folder called archive
 def archive_consensus(year, month, date, hour):
     ''' Pulls relay info from consensus file
@@ -372,18 +374,26 @@ def parse_arguments(args):
     parser.add_argument("start_date", help="date in year-mo-da-hr format")
     parser.add_argument("end_date", help="date in year-mo-da-hr format (not inclusive)")
     parser.add_argument("roas", help="csv file of validated ROAs")
+    parser.add_argument("routeviews", help="routeview mapping file")
     return parser.parse_args(args)
 
 
 def main(args):
     """
-    sample usage: python3 preprocess_consensus.py 2021-03-13-00 2021-03-13-01 20210313.csv
+    sample usage: python3 preprocess_consensus.py 2021-03-13-00 2021-03-13-01 20210313.csv routeviews-rv2-20210722-0200.pfx2as
     Put raw consensus file into archive folder, this main function will make relay objects and pickle them in archive_pickles folder
     The relay objects with ROA coverage and ip, asn information will be placed in the processed folder 
     """
+    global v6QUICKDICT
+    global v6MAPDICT
+    global v4QUICKDICT
+    global v4MAPDICT
+    args = parse_arguments(args)
+    v4MAPDICT, v4QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v4(args.routeviews)
+    v6MAPDICT, v6QUICKDICT = upgradeIpASNMap.preprocess_get_prefix_asn_local_v6()
     #retrieve and format argument 
     start_time = time.time()
-    args = parse_arguments(args)
+    
     start_date = args.start_date.split('-')
     end_date = args.end_date.split('-')
     for i in range(4):

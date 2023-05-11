@@ -38,7 +38,7 @@ def get_prefix_and_asn(ip):
 
 
 
-def preprocess_get_prefix_asn_local_v4():
+def preprocess_get_prefix_asn_local_v4(routeviewPath):
     """
     preprocess the route view data
     return 2 dict: map_dict is the routeviews file in dictionary format: ip network -> asn 
@@ -51,7 +51,7 @@ def preprocess_get_prefix_asn_local_v4():
     print("running v4 pre!!!")
     map_dict = dict() #store each entry of routeview data, ip network -> asn 
     quick_dict = dict() #store starting index of each octet 
-    routeviewFile = "routeviews-rv2-20210722-0200.pfx2as"
+    routeviewFile = routeviewPath
     with open(routeviewFile) as tsv:
         count = 0
         num = 1
@@ -134,7 +134,7 @@ def preprocess_get_prefix_asn_local_v6():
     print("runniong v6 pre")
     map_dict = dict()
     quick_dict = dict()
-    with open("routeviews-rv6-20210701-1200.pfx2as") as tsv:
+    with open("routeviews-rv6-20230201-1000.pfx2as") as tsv:
         count = 0
         num = '2001'
         quick_dict[num] = count

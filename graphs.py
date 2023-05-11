@@ -1,7 +1,6 @@
 from util import * 
 import argparse
 import sys
-import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.gridspec import GridSpec
 import numpy as np
@@ -625,7 +624,7 @@ def main(args):
             if len(relay.asn) > 1:
                 # relay.asn return a list supposedly with 1 entry which is the asn
                 # make sure the format is valid, inherented this format from get_prefix_and_asn() in util.py
-                print("invalid")
+                print("invalid multi asn")
                 bad_as_set += 1
                 v4_invalid += 1
                 v4_bw_invalid += relay.bw
