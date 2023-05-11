@@ -99,7 +99,7 @@ class Client:
         self.roa = None #[ip network obj, maxlen, prefixlen, asn]
         self.roaCovered = None #true or false value indicating roa's validity
         self.rovCovered = None
-        self.rovDiscount = 0.1
+        self.rovDiscount = 0.2
         self.roaDiscount = 0.1
         self.neitherDiscount = 1
     # call each consenses
@@ -318,7 +318,7 @@ def load_consensus(p, year, month, date, hour):
     """Pulls relay data from processed consensus file"""
     # load .pickle file
     filename = p + year + '-' + month + '-' + date + '-' + hour + '-processed.pickle'
-    # print(filename )
+    print(filename )
     try:
         file = open(filename, 'rb')
     # if it doesn't exist, don't update GUARDS, WGD, WGG

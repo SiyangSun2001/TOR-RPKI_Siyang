@@ -271,15 +271,16 @@ def main():
     download the prefix to ASN file (routeviews-rv2-20210722-0200.pfx2as) here https://publicdata.caida.org/datasets/routing/routeviews-prefix2as/
     """
     start2 = time.perf_counter()
-    ASNnumIP = getAllAS3("../routeviews-rv2-20210722-0200.pfx2as")
+    ASNnumIP = getAllAS3("../routeviews-rv2-20230113-1200.pfx2as")
     end2 = time.perf_counter()
+    
 
 
     print('takes ', (end2 - start2), 'secs to tally up number of ip address each ASN announces')
 
-    asn_orgID, orgID_origin = preprocess_asn_origin('../20210701.as-org2info.txt')
+    asn_orgID, orgID_origin = preprocess_asn_origin('../20230101.as-org2info.txt')
     result_dict = get_origin(asn_orgID, orgID_origin, ASNnumIP)
-    with open('ASNnumIPtest.pickle', 'wb') as pf:
+    with open('ASNnumIP.pickle', 'wb') as pf:
         pickle.dump(result_dict, pf)
 
 

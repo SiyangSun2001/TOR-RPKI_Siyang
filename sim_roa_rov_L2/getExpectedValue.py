@@ -241,10 +241,10 @@ def get_expectVal_wdiffLoad(consensus_date):
     """
     discount = np.linspace(0.5,1,25)
 
-    load = [ 0.8, 0.9, 1] # list of different network load 
+    load = [0.9, 1] # list of different network load 
     lb = {0.8:[],0.9:[], 1:[]} #load balance for each network load 
 
-    performanceDecrease = [1]*25 #bound where mathcing performance is worse than vanilla 
+    performanceDecrease = [100]*25 #bound where mathcing performance is worse than vanilla 
     for l in load:
         
         for d in discount: 
@@ -252,14 +252,15 @@ def get_expectVal_wdiffLoad(consensus_date):
             lb[l].append(dis/(van*l))
     
     # print(lb) 
+    print(lb)
     formatlb = {0.8:[[], []], 0.9:[[], []], 1:[[], []]}
     for l in load:
-        print(lb[l][0])
+        # print(lb[l][0])
         points = [(discount[0],lb[l][0]),( discount[1],lb[l][1])]
         x_coords, y_coords = zip(*points)
         A = vstack([x_coords,ones(len(x_coords))]).T
         m, c = lstsq(A, y_coords)[0]
-        print(m,c)
+        # print(m,c)
         for y in range(len(lb[l])):
             if lb[l][y] < 1:
                 formatlb[l][0].append(discount[y])
@@ -269,18 +270,23 @@ def get_expectVal_wdiffLoad(consensus_date):
                 formatlb[l][0].append(x)
                 formatlb[l][1].append(1)
                 break
-    print(formatlb[0.8])
-    print(lb[0.8])
+    # print(formatlb[0.8])
+    # print(lb[0.8])
 
     # print(lb)
     plt.figure(figsize = (8,8))#set figure size 
     plt.xlabel('Discount Value')
     plt.ylabel('Expected Value')
-    plt.title('Expected Value of LoadBalance relative to Vanilla at Different Network Load' + consensus_date)
+    plt.title('Expected Value of Load Balance for Discount Algorithm')
     
     #plot each network load's LB 
+    
     for l in load:
-        plt.plot(formatlb[l][0], formatlb[l][1], label = ("load: " + str(l)))
+        for i in range(len(formatlb[l][1])):
+            formatlb[l][1][i] = formatlb[l][1][i]*100
+        
+    for l in load:
+        plt.plot(formatlb[l][0], formatlb[l][1], label = ("Tor Network Load: " + str(l*100) + "%"))
     plt.plot(discount, performanceDecrease, marker = '.',label = "Performance Benchmark", color = "black")
     plt.legend()
     

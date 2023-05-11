@@ -115,7 +115,7 @@ def get_LoadBalance_Matching_multiParam(consensus_date, ClientFile, paramPermuta
     count = 0
     #iterate through all params 
     for param in paramPermutations:
-        print(count)
+        print(count, "lb")
         ClientWeights = []
         roa = 0 
         rovROAROV = 0
@@ -197,7 +197,7 @@ def get_roarov_matching_multiParam(consensus_date, ClientFile, perm):
     clients = pickle.load(filec)
     p = os.getcwd()
     path = os.path.split(p)[0]
-    path = path + '/rpkicoverage/processed/'
+    path = path + '/processed/'
     consensus_date = consensus_date.split('-')
     
 
@@ -219,7 +219,7 @@ def get_roarov_matching_multiParam(consensus_date, ClientFile, perm):
     count = 0
     for p in perm:
         count += 1
-        print(count)
+        print(count, "roarov")
         clientsCopy = copy.deepcopy(clients)
         load_consensus(path, consensus_date[0], consensus_date[1], consensus_date[2], consensus_date[3]) 
         #change the clients matching discount into current discount 
@@ -277,7 +277,7 @@ def get_proa_multiparam(consensus_date, ClientFile, perm):
     num_clients = len(clients)
     p = os.getcwd()
     path = os.path.split(p)[0]
-    path = path + '/rpkicoverage/processed/'
+    path = path + '/processed/'
     consensus_date = consensus_date.split('-')
     
     t  = datetime(int(consensus_date[0]),int(consensus_date[1]),int(consensus_date[2]),int(consensus_date[3]))
@@ -294,7 +294,7 @@ def get_proa_multiparam(consensus_date, ClientFile, perm):
     #iterate through each permutation 
     for p in perm:
         count += 1
-        print(count)
+        print(count, "proa")
         #create deep copy of client object 
         clientsCopy = copy.deepcopy(clients)
         #load consensus and update gobal var in util file 
@@ -319,20 +319,21 @@ def get_proa_multiparam(consensus_date, ClientFile, perm):
     return resultls
 
 # perm = get_param_Permutation((0.1,0.2,0.3,0.4,0.5,0.6, 0.7, 0.8, 0.9))
-# print(len(perm))
+
+
 # for i in perm:
 #     i.append(1)
 
-# ROA_ROVResult = get_roarov_matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
-# with open("PermROA_ROVResult.pickle", 'wb') as f:
+# ROA_ROVResult = get_roarov_matching_multiParam('2023-02-13-23', 'typicalTOR1000Clients2023.pickle', perm)
+# with open("PermROA_ROVResult2023.pickle", 'wb') as f:
 #     pickle.dump(ROA_ROVResult, f)
 # print("finish roa rov")
-# LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
-# with open("PermLBResult.pickle", 'wb') as f:
+# LB = get_LoadBalance_Matching_multiParam('2023-02-13-23', 'typicalTOR1000Clients2023.pickle', perm)
+# with open("PermLBResult2023.pickle", 'wb') as f:
 #     pickle.dump(LB, f)
 # print("finish LB")
-# pROA = get_proa_multiparam('2020-09-01-00', 'typicalTOR1000Clients.pickle', perm)
-# with open("Perm_pROA_Result.pickle", 'wb') as f:
+# pROA = get_proa_multiparam('2023-02-13-23', 'typicalTOR1000Clients2023.pickle', perm)
+# with open("Perm_pROA_Result2023.pickle", 'wb') as f:
 #     pickle.dump(pROA, f)
 
 # print("finished")
@@ -359,9 +360,9 @@ def param_multi_run(paramfname, repeat, fromPickle = True):
         roaROVls = []
         LBls = []
         while count < repeat:
-            pROA = get_proa_multiparam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
-            roaROV = get_roarov_matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
-            LB = get_LoadBalance_Matching_multiParam('2020-09-01-00', 'typicalTOR1000Clients.pickle', [p])
+            pROA = get_proa_multiparam('2023-02-13-00', 'typicalTOR1000Clients2023.pickle', [p])
+            roaROV = get_roarov_matching_multiParam('2023-02-13-00', 'typicalTOR1000Clients2023.pickle', [p])
+            LB = get_LoadBalance_Matching_multiParam('2023-02-13-00', 'typicalTOR1000Clients2023.pickle', [p])
             pROAls.append(pROA[0][1])
             roaROVls.append(roaROV[0][1])
             LBls.append(LB[0][1])
@@ -404,6 +405,6 @@ def get_consensus_data(file):
     print('percent roa rov:', roarov/totalGuard)
     print('percent rov:', rov/totalGuard)
 
-# param_multi_run([[1,1,1]], 10, fromPickle = False)
+param_multi_run([[1,1,1]], 10, fromPickle = False)
 # get_consensus_data('/home/siyang/research/tor-rpki/processed/2020-09-01-00-processed.pickle')
 

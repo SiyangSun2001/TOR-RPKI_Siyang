@@ -31,4 +31,5 @@ def get_ROV_data(files):
         pickle.dump(set(ROVList), pf)
     
 
+get_ROV_data(['page1.txt', 'page2.txt'])
 

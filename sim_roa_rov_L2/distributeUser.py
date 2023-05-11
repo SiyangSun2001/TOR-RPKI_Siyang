@@ -1,10 +1,10 @@
 import random 
-from utilExit    import *
+from util    import *
 import pickle
 import ipaddress
 
 #downloaded here:https://metrics.torproject.org/userstats-relay-table.html?start=2021-05-12&end=2021-08-10
-UserPerCountry = {'US': 0.2429, 'RU': 0.1543, 'DE': 0.07980000000000001, 'NL': 0.040999999999999995, 'FR': 0.0346, 'ID': 0.0277, 'GB': 0.0256, 'IN': 0.0254, 'UA': 0.0215, 'LT': 0.0178}
+UserPerCountry = {'US': 0.2423, 'RU': 0.1543, 'DE': 0.07980000000000001, 'NL': 0.040999999999999995, 'FR': 0.0346, 'ID': 0.0277, 'GB': 0.0256, 'IN': 0.0254, 'UA': 0.0215, 'LT': 0.0178}
 countries = list(UserPerCountry.keys())
 cweights = list(UserPerCountry.values())
 
@@ -54,7 +54,7 @@ def get_roas(filename):
                 if 'AS' not in row[0]:
                     asn = row[0]
                 else:
-                    asn = row[2:]
+                    asn = row[0][2:]
                 ipv4s.append([ipv4, maxlen, prefixlen, asn])
             except ipaddress.AddressValueError: 
                 #ignore cases where the address is ipv6 
@@ -188,7 +188,8 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
     
 
     #get coverage dict from the roa csv file 
-    if make_pickle == True:
+    # if make_pickle == True:
+    if True:
         cdict = coverage_dict(roaFile, ipv4s, make_pickle=True)
     else:
         file = open('coverage.pickle', 'rb')
@@ -199,17 +200,20 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
     #iterate through the clients 
     for c in ClientListwASN:
         #get the roa entry from csv from coverage dict which returns ip -> [ip network obj, maxlen, prefixlen, asn]
+       
         c.roa = cdict[c.ipaddress]
 
         #if roa does not exist then its not covered 
         if c.roa == None:
             c.roaCovered = False
+            # print("roa does not exist")
             if check_rov(c.AS.ASN):
                 specs[2] += 1
             else:
                 specs[3] += 1
         #if the asn announced does not match the asn from roa file the its invalid or if the prefix annouunced is more specific than the roa specified it is invalid 
         elif c.AS.ASN != c.roa[3] or c.roa[1] < c.prefix[0].split('/')[1]:
+            # print("roa invalid")
             c.roaCovered = False
             if check_rov(c.AS.ASN):
                 specs[2] += 1
@@ -218,6 +222,7 @@ def assignASN(numUsers, countries, cweights, selection_algo, roaFile, make_pickl
         #otherwise it is covered 
         else:
             c.roaCovered = True
+            # print("roa Covered in making client")
             if check_rov(c.AS.ASN):
                 specs[0] += 1
             else:
@@ -246,7 +251,10 @@ def check_roa_pre(roaFile):
         for line in f1:
             line = line.split(',')
             if ":" not in line[1]:
-                roaDict[line[1].split('.')[0]].append([int(line[0]), ipaddress.IPv4Network(line[1]), int(line[2])])
+                if "AS" in line[0]:   
+                    roaDict[line[1].split('.')[0]].append([int(line[0][2:]), ipaddress.IPv4Network(line[1]), int(line[2])])
+                else:
+                    roaDict[line[1].split('.')[0]].append([int(line[0]), ipaddress.IPv4Network(line[1]), int(line[2])])
     
     return roaDict
 
@@ -392,7 +400,7 @@ def check_roa_debug(cip, cASN, cprefix, roaDict):
 #     return resultClientList 
 
 
-def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, csvfile):
+def user_specified_client2(roa_rov, roa, rov, neither, numClients, select_algo, csvfile):
 
     '''
     primary function used to make customized client objects based the provided roa, rov coverage.
@@ -512,8 +520,10 @@ def user_specified_client2(roa, rov, roa_rov, neither, numClients, select_algo, 
     return resultClientList
 
 
-# specifiedClients = user_specified_client2(208, 17, 7, 768, 1000, 'matching', '/home/siyang/research/tor-rpki/20200913.csv')
-# with open("typicalTOR1000Clients.pickle", 'wb') as f:
-#     pickle.dump(specifiedClients, f)
+specifiedClients = user_specified_client2(7, 275, 11, 707, 1000, 'matching', '/home/ys3kz/TorPythonSimulator/TOR-RPKI_Siyang/20230213.csv')
+# specifiedClients, specs = assignASN(1000, countries, cweights, "matching", "../20230213.csv")
+# print(specs)
+with open("typicalTOR1000Clients2023.pickle", 'wb') as f:
+    pickle.dump(specifiedClients, f)
 # test = get_prefix_addresses_map()
 # print(test)

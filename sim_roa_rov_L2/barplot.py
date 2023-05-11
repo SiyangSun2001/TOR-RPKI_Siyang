@@ -68,8 +68,8 @@ def scatter(LBfile, RRfile):
     plt.scatter(x, y)
     plt.xlabel('ROA ROV matching')
     plt.ylabel('Load Balance Expected Value')
-    plt.title('Load Balance v.s. ROA ROV matches for Qualified Param (Normal Coverage)')
-    plt.savefig('scatter.png')
+    plt.title('Load Balance v.s. ROA ROV matches for Qualified Param')
+    plt.savefig('scatter2023.png')
 
 
 
@@ -115,3 +115,5 @@ def scatterWload(LBfile, RRfile, networkLoad):
     plt.savefig('load'+ str(networkLoad) + 'sctter.png')
 # scatterWload(0.9)
 #scatter()
+
+scatter('PermLBResult2023.pickle', 'PermROA_ROVResult2023.pickle')

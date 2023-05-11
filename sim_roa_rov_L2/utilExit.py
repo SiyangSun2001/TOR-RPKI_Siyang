@@ -27,7 +27,7 @@ WGG = 0
 
              # bandwidth weight for guards
 
-file =  open('/home/siyang/research/ClonedGitRepo/TOR-RPKI_Siyang/sim_roa_rov_L2/ASNwROV.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
+file =  open('./ASNwROV.pickle', 'rb') #open a file where a list of ASN with ROV is kept 
 ROVset = pickle.load(file)
 file.close()
 
