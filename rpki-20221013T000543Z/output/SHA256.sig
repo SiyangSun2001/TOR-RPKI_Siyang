@@ -1,0 +1,5 @@
+untrusted comment: verify with josephine.sobornost.net.pub
+RWSD90Fx3Yk57odi6nd/csB3haakYZqvAoXzpOs1Ix36EQDnYrX3+M1jCbvdO9QJculh9mdw2DOA+1FK/m6arA/dox9LMcjPIQs=
+SHA256 (rpki-client.log) = 45577b509e5f8585fc253f137e406637ec3e2f1072237d6fa22f9cc4a921a78e
+SHA256 (rpki-client.csv) = aa7e530d16147f716cda6ac553339894ffb599110a23875204da737395edf241
+SHA256 (rpki-client.json) = 37cb2e039bb7ef45f8148a28edd77b27c7702cbfddadbfef9e5723cbe0fdb0c2

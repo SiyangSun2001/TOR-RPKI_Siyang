@@ -1,0 +1,349 @@
+20221013T000001Z rpki-client: ta/apnic: pulling from https://rpki.apnic.net/repository/apnic-rpki-root-iana-origin.cer
+20221013T000001Z rpki-client: ta/afrinic: pulling from https://rpki.afrinic.net/repository/AfriNIC.cer
+20221013T000001Z rpki-client: ta/ripe: pulling from https://rpki.ripe.net/ta/ripe-ncc-ta.cer
+20221013T000001Z rpki-client: ta/arin: pulling from https://rrdp.arin.net/arin-rpki-ta.cer
+20221013T000001Z rpki-client: ta/lacnic: pulling from https://rrdp.lacnic.net/ta/rta-lacnic-rpki.cer
+20221013T000001Z rpki-client: ta/ripe: loaded from network
+20221013T000001Z rpki-client: https://rrdp.ripe.net/notification.xml: pulling from network
+20221013T000001Z rpki-client: https://rrdp.ripe.net/notification.xml: downloading 3 deltas
+20221013T000002Z rpki-client: ta/lacnic: loaded from network
+20221013T000002Z rpki-client: https://rrdp.lacnic.net/rrdp/notification.xml: pulling from network
+20221013T000002Z rpki-client: https://rrdp.ripe.net/notification.xml: loaded from network
+20221013T000002Z rpki-client: ta/afrinic: loaded from network
+20221013T000002Z rpki-client: https://rrdp.afrinic.net/notification.xml: pulling from network
+20221013T000002Z rpki-client: ta/arin: loaded from network
+20221013T000002Z rpki-client: https://rrdp.lacnic.net/rrdp/notification.xml: downloading 1 deltas
+20221013T000002Z rpki-client: https://rrdp.lacnic.net/rrdp/notification.xml: loaded from network
+20221013T000002Z rpki-client: ta/apnic: loaded from network
+20221013T000004Z rpki-client: https://rrdp.afrinic.net/notification.xml: repository not modified
+20221013T000004Z rpki-client: https://rrdp.afrinic.net/notification.xml: loaded from network
+20221013T000007Z rpki-client: rpki.afrinic.net: TLS read: read failed: error:0A000126:SSL routines::unexpected eof while reading
+20221013T000009Z rpki-client: rrdp.afrinic.net: TLS read: read failed: error:0A000126:SSL routines::unexpected eof while reading
+20221013T000022Z rpki-client: https://rrdp.arin.net/notification.xml: pulling from network
+20221013T000022Z rpki-client: https://rrdp.apnic.net/notification.xml: pulling from network
+20221013T000022Z rpki-client: https://rrdp.apnic.net/notification.xml: downloading 29 deltas
+20221013T000022Z rpki-client: https://rpki1.terratransit.de/rrdp/notification.xml: pulling from network
+20221013T000022Z rpki-client: https://rrdp.apnic.net/notification.xml: loaded from network
+20221013T000022Z rpki-client: https://rpki.multacom.com/rrdp/notification.xml: pulling from network
+20221013T000022Z rpki-client: https://0.sb/rrdp/notification.xml: pulling from network
+20221013T000023Z rpki-client: https://rrdp.arin.net/notification.xml: downloading 3 deltas
+20221013T000023Z rpki-client: https://0.sb/rrdp/notification.xml: notification file not modified
+20221013T000023Z rpki-client: https://0.sb/rrdp/notification.xml: loaded from network
+20221013T000023Z rpki-client: https://rrdp.sub.apnic.net/notification.xml: pulling from network
+20221013T000023Z rpki-client: https://rrdp.arin.net/notification.xml: loaded from network
+20221013T000023Z rpki-client: https://rpki.multacom.com/rrdp/notification.xml: notification file not modified
+20221013T000023Z rpki-client: https://rpki.multacom.com/rrdp/notification.xml: loaded from network
+20221013T000024Z rpki-client: https://rpki1.rpki-test.sit.fraunhofer.de/rrdp/notification.xml: pulling from network
+20221013T000024Z rpki-client: https://rpki1.rpki-test.sit.fraunhofer.de/rrdp/notification.xml: notification file not modified
+20221013T000024Z rpki-client: https://rpki1.rpki-test.sit.fraunhofer.de/rrdp/notification.xml: loaded from network
+20221013T000024Z rpki-client: rrdp.sub.apnic.net: TLS read: read failed: error:0A000126:SSL routines::unexpected eof while reading
+20221013T000024Z rpki-client: https://rrdp.sub.apnic.net/notification.xml: notification file not modified
+20221013T000024Z rpki-client: https://rrdp.sub.apnic.net/notification.xml: loaded from network
+20221013T000024Z rpki-client: https://rpki.as207960.net/rrdp/notification.xml: pulling from network
+20221013T000024Z rpki-client: https://rpki.as207960.net/rrdp/notification.xml: notification file not modified
+20221013T000024Z rpki-client: https://rpki.as207960.net/rrdp/notification.xml: loaded from network
+20221013T000025Z rpki-client: https://rrdp.rp.ki/notification.xml: pulling from network
+20221013T000026Z rpki-client: https://rrdp.rp.ki/notification.xml: repository not modified
+20221013T000026Z rpki-client: https://rrdp.rp.ki/notification.xml: loaded from network
+20221013T000028Z rpki-client: https://rpki.roa.net/rrdp/notification.xml: pulling from network
+20221013T000028Z rpki-client: https://rpki.roa.net/rrdp/notification.xml: downloading 1 deltas
+20221013T000028Z rpki-client: https://rpki.roa.net/rrdp/notification.xml: loaded from network
+20221013T000029Z rpki-client: https://rpki.august.tw/rrdp/notification.xml: pulling from network
+20221013T000030Z rpki-client: https://rpki.august.tw/rrdp/notification.xml: repository not modified
+20221013T000030Z rpki-client: https://rpki.august.tw/rrdp/notification.xml: loaded from network
+20221013T000032Z rpki-client: https://rpki-test-repo.net.kagl.me/rrdp/notification.xml: pulling from network
+20221013T000033Z rpki-client: https://chloe.sobornost.net/rpki/news-public.xml: pulling from network
+20221013T000033Z rpki-client: https://rpki.qs.nu/rrdp/notification.xml: pulling from network
+20221013T000033Z rpki-client: https://magellan.ipxo.com/rrdp/notification.xml: pulling from network
+20221013T000033Z rpki-client: https://rpki.qs.nu/rrdp/notification.xml: notification file not modified
+20221013T000033Z rpki-client: https://rpki.qs.nu/rrdp/notification.xml: loaded from network
+20221013T000033Z rpki-client: https://magellan.ipxo.com/rrdp/notification.xml: notification file not modified
+20221013T000033Z rpki-client: https://magellan.ipxo.com/rrdp/notification.xml: loaded from network
+20221013T000033Z rpki-client: redirect to https://chloe.sobornost.net/rpki/news.xml
+20221013T000033Z rpki-client: https://rpki.ezdomain.ru/rrdp/notification.xml: pulling from network
+20221013T000034Z rpki-client: Error retrieving chloe.sobornost.net: 404 Not Found
+20221013T000034Z rpki-client: https://chloe.sobornost.net/rpki/news-public.xml: load from network failed, fallback to rsync
+20221013T000034Z rpki-client: .rsync/chloe.sobornost.net/rpki: pulling from rsync://chloe.sobornost.net/rpki
+20221013T000034Z rpki-client: https://rpkica.mckay.com/rrdp/notify.xml: pulling from network
+20221013T000034Z rpki-client: https://rpkica.mckay.com/rrdp/notify.xml: TLS handshake: certificate verification failed: certificate has expired
+20221013T000034Z rpki-client: https://rpkica.mckay.com/rrdp/notify.xml: load from network failed, fallback to rsync
+20221013T000034Z rpki-client: .rsync/rpkica.mckay.com/rpki: pulling from rsync://rpkica.mckay.com/rpki
+20221013T000034Z rpki-client: .rsync/rpkica.mckay.com/rpki: loaded from network
+20221013T000034Z rpki-client: https://rpki.ezdomain.ru/rrdp/notification.xml: notification file not modified
+20221013T000034Z rpki-client: https://rpki.ezdomain.ru/rrdp/notification.xml: loaded from network
+20221013T000035Z rpki-client: .rsync/chloe.sobornost.net/rpki: loaded from network
+20221013T000036Z rpki-client: https://chloe.sobornost.net/rpki/news.xml: pulling from network
+20221013T000036Z rpki-client: rpki1.terratransit.de: connect timeout
+20221013T000036Z rpki-client: rpki1.terratransit.de: connect timeout
+20221013T000036Z rpki-client: https://rpki1.terratransit.de/rrdp/notification.xml: load from network failed, fallback to rsync
+20221013T000036Z rpki-client: .rsync/rpki1.terratransit.de/repo: pulling from rsync://rpki1.terratransit.de/repo
+20221013T000037Z rpki-client: Error retrieving chloe.sobornost.net: 404 Not Found
+20221013T000037Z rpki-client: https://chloe.sobornost.net/rpki/news.xml: load from network failed, fallback to rsync
+20221013T000042Z rpki-client: https://rpki.xindi.eu/rrdp/notification.xml: pulling from network
+20221013T000042Z rpki-client: https://rpki.xindi.eu/rrdp/notification.xml: notification file not modified
+20221013T000042Z rpki-client: https://rpki.xindi.eu/rrdp/notification.xml: loaded from network
+20221013T000044Z rpki-client: https://ca.rg.net/rrdp/notify.xml: pulling from network
+20221013T000045Z rpki-client: https://ca.rg.net/rrdp/notify.xml: downloading 1 deltas
+20221013T000045Z rpki-client: https://ca.rg.net/rrdp/notify.xml: loaded from network
+20221013T000047Z rpki-client: https://rpki.admin.freerangecloud.com/rrdp/notification.xml: pulling from network
+20221013T000047Z rpki-client: rpki-test-repo.net.kagl.me: connect timeout
+20221013T000047Z rpki-client: https://rpki-test-repo.net.kagl.me/rrdp/notification.xml: load from network failed, fallback to rsync
+20221013T000047Z rpki-client: .rsync/rpki-test-repo.net.kagl.me/repo: pulling from rsync://rpki-test-repo.net.kagl.me/repo
+20221013T000047Z rpki-client: https://rpki.admin.freerangecloud.com/rrdp/notification.xml: notification file not modified
+20221013T000047Z rpki-client: https://rpki.admin.freerangecloud.com/rrdp/notification.xml: loaded from network
+20221013T000050Z rpki-client: https://rrdp.witine.com/notification.xml: pulling from network
+20221013T000050Z rpki-client: rrdp.witine.com: Name or service not known
+20221013T000050Z rpki-client: https://rrdp.witine.com/notification.xml: load from network failed, fallback to rsync
+20221013T000050Z rpki-client: .rsync/rpki.witine.com/repo: pulling from rsync://rpki.witine.com/repo
+20221013T000051Z rsync error: timeout waiting for daemon connection (code 35) at socket.c(278) [Receiver=3.2.4]
+20221013T000051Z rpki-client: rsync rsync://rpki1.terratransit.de/repo failed
+20221013T000051Z rpki-client: .rsync/rpki1.terratransit.de/repo: load from network failed, fallback to cache
+20221013T000053Z rpki-client: https://rrdp.krill.cloud/notification.xml: pulling from network
+20221013T000053Z rpki-client: https://rrdp.krill.cloud/notification.xml: connect: Connection refused
+20221013T000053Z rpki-client: https://rrdp.krill.cloud/notification.xml: notification file not modified
+20221013T000053Z rpki-client: https://rrdp.krill.cloud/notification.xml: loaded from network
+20221013T000054Z rpki-client: https://rpki.caramelfox.net/rrpdp/notification.xml: pulling from network
+20221013T000054Z rpki-client: Error retrieving rpki.caramelfox.net: 404 Not Found
+20221013T000054Z rpki-client: https://rpki.caramelfox.net/rrpdp/notification.xml: load from network failed, fallback to rsync
+20221013T000054Z rpki-client: .rsync/rpki.caramelfox.net/repo: pulling from rsync://rpki.caramelfox.net/repo
+20221013T000055Z rpki-client: https://rpki.owl.net/rrdp/notification.xml: pulling from network
+20221013T000055Z rpki-client: https://rpki.owl.net/rrdp/notification.xml: notification file not modified
+20221013T000055Z rpki-client: https://rpki.owl.net/rrdp/notification.xml: loaded from network
+20221013T000057Z rpki-client: https://krill.rayhaan.net/rrdp/notification.xml: pulling from network
+20221013T000057Z rpki-client: https://krill.rayhaan.net/rrdp/notification.xml: notification file not modified
+20221013T000057Z rpki-client: https://krill.rayhaan.net/rrdp/notification.xml: loaded from network
+20221013T000100Z rpki-client: .rsync/rpki.caramelfox.net/repo: loaded from network
+20221013T000102Z rsync error: timeout waiting for daemon connection (code 35) at socket.c(278) [Receiver=3.2.4]
+20221013T000102Z rpki-client: rsync rsync://rpki-test-repo.net.kagl.me/repo failed
+20221013T000102Z rpki-client: .rsync/rpki-test-repo.net.kagl.me/repo: load from network failed, fallback to cache
+20221013T000105Z rsync error: timeout waiting for daemon connection (code 35) at socket.c(278) [Receiver=3.2.4]
+20221013T000105Z rpki-client: rsync rsync://rpki.witine.com/repo failed
+20221013T000105Z rpki-client: .rsync/rpki.witine.com/repo: load from network failed, fallback to cache
+20221013T000105Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/10/02F18E14338C93D58FD2F47A832050B6576C4771.mft: no valid mft available
+20221013T000109Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/8/1A6A51E3D825A67400D7D0527A0A1D17E605B464.mft: no valid mft available
+20221013T000111Z rpki-client: rpkica.mckay.com/rpki/MCnet/Jp4Tjp_GB5I1RfeaOGhKZNlDmAQ.mft: no valid mft available
+20221013T000115Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/14/4198FF5C166BE1F315EE2CE5842049A6004E6276.mft: no valid mft available
+20221013T000115Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/7/448957CF5A45FD474BDBCDE9929158696EB4B017.mft: no valid mft available
+20221013T000117Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/12/50F93BF422A61DF2B46EE6A8676A53811E7D8140.mft: no valid mft available
+20221013T000123Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/6/7664B791FE52F65262AD92A27FFF78717F370E08.mft: no valid mft available
+20221013T000124Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/4/7925E4A5620F48BEF56F82132A31CCD841468D45.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/204/D128FBEE1DB4E01244F763E6F865DC0D07C20818.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/215/D27757F2B764ABCAD8B4C1BFB574C9A40AB6CF10.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/199/D78EB37BFDD5EEB8C41BA54D59E78733F113A16F.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/206/D48C218CD3390D91E824869F7FF30066A1E94F82.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/181/DA27ACFB4F88BC239DB8FD8C7B11F21B1CBAC465.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/180/DFE89BF7DAA0F8AA7D022DF984E6EA37E6F60A3D.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/176/E53A419D6FA14FC2CB279F0A28DAF4A6CC9415FD.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/194/F0D4B63AA1EF194104A8D6BE1A0BC2B34DED0906.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/200/F666BD99C46FF0C69DF9E17DAE81B9A846CBE128.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/184/00DBC43047F8D3CC2FDBB4614A74DAF2E4E891C3.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/2/07A8AF2B5FE831FF589EB38AE3C025CE871F23E7.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/190/0E3A7EA9A058E7F3EE493A578BF72DB2BC986DF4.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/162/16DC80862EC40036E8A388634FB573B2ED2ADFF7.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/213/16E42330B2C806F2CC13ECACC719772C57935C81.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/198/1A71895BF69A274231858CF672B8B52AD167360F.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/8/1E793B5C1239231E08DEDD6FB8060732CD063F4D.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/177/2085CCDED28A68D872CBF19754311E6F616649B1.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/3/22D29C996ABCC72C72279EF78987951B825AE400.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/193/2AE29071614DA0D572FF05ADE17077277CCC2110.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/185/31F805DD7157FAB3977903E1C46DAF818D29D2A6.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/208/382D1187A9E2AD4FDB744A920DDC515D11427A82.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/210/3BF52D0ACA9767FAAA6151CD7B1622476FFE4B42.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/192/45D0872F191D38154868A8D8D86D61579F7588A2.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/201/4C584BCA2A103DF4DB67B2835DE221AEBE1AD26E.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/189/4CD923117AB255BF36C9C04E9CB209B10C8DC35F.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/5/57EE86DFC56D55209A35924D831530035BAE3907.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/187/5FA7EE728C16C113B3DF97066A55DEDAE77C52D9.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/7/5DC970755824CB967CAD6F3B964709B092D43069.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/182/5F227720ED73A14AE982021CDE3A83E2ABC0F170.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/6/61994EE93BABE60C13E04487FA5CD34FD23FC93F.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/219/6858A1C91FE320BD3FE18693C30EDDD7F72C23CA.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/217/69F3D2939CAC8784AA831E0F3D81B5D0D4980C78.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/207/6C030FE64E116F19482952DA687E8A24CF24366A.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/211/6D301966BCBBD889C257F256F1C15A261948BB65.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/205/6DAC0A57F963A3F6738331141953A50963DD6C5D.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/218/7BCA4DA732CA1E47104872840269C9F17C9DD5F2.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/108/79131A4E3CC0851C2ED1363D6982E7436D3DF9F9.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/202/7A9A95EBF1D5F853A436AED36BFD28219FFE033E.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/164/7EBD1421D6EE46B714647FB7D198AE4601B63729.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/209/802C24DD620D621725905874120637FD2510427E.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/203/8067B57A74A7C5C40BF47FF502187CC1DECD1771.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/188/8BC6F5105C9A657B0CC2F36EC883871E844A026F.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/216/92B123F85EB3D67A0058B20D53C9302913CDA9D7.mft: no valid mft available
+20221013T000129Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/191/9A39239FD8B7752CD35E43227D983A7433F55A46.mft: no valid mft available
+20221013T000129Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/13/A34B4ACB2624D98EDEC057FA500759AFFB651F68.mft: no valid mft available
+20221013T000131Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/4/A6B65D4709F6CFD999A287789392BAA6D3A5DCEA.mft: no valid mft available
+20221013T000132Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/212/AEB7869ADE028AC455EF8D45513953D4B6A1B18F.mft: no valid mft available
+20221013T000132Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/15/B02F3D48B7D258F9BE4AA72F3A4939D1CB590675.mft: no valid mft available
+20221013T000132Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/186/B0AAE10CAEDF60922A10A3C91F5F7E0EA2A7026C.mft: no valid mft available
+20221013T000134Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/11/BC545B269BAE2C55CF704BD7E12A8DEC58F6261A.mft: no valid mft available
+20221013T000134Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/196/BCA2FBFEC7BFAD506E3DB97BB16595F0D0AE9088.mft: no valid mft available
+20221013T000134Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/183/BE8A631631FF0AA2DC5BD9F8996687A09C558911.mft: no valid mft available
+20221013T000134Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/195/BF2F3A306DA78A15E48522884810ABEEB5EF66B0.mft: no valid mft available
+20221013T000135Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/197/C6C9AA636A6CE2DB4C403E881EA2993985A13CEF.mft: no valid mft available
+20221013T000136Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/2/CF88C32795224CB308CE6E3FC45CE07D9508E938.mft: no valid mft available
+20221013T000136Z rpki-client: rpki1.terratransit.de/repo/TerraTransit/214/CC86C6AE0C33C05C4269F012E226B6BC631150D0.mft: no valid mft available
+20221013T000136Z rpki-client: rpki-repo.as207960.net/repo/as207960-rpki-ca/9/CD88EE0B25DBBD07CF1A1569CD97020406E269B4.mft: no valid mft available
+20221013T000140Z rpki-client: https://rrdp.taaa.eu/rrdp/notification.xml: pulling from network
+20221013T000140Z rpki-client: https://rrdp.taaa.eu/rrdp/notification.xml: notification file not modified
+20221013T000140Z rpki-client: https://rrdp.taaa.eu/rrdp/notification.xml: loaded from network
+20221013T000142Z rpki-client: rpki-test-repo.net.kagl.me/repo/KeatonAGLair-RPKI-TEST/0/185CA68E90574318A0552F0B7F42CC120369F28F.mft: no valid mft available
+20221013T000145Z rpki-client: rpki.witine.com/repo/witine/0/979D3F87F2DF7DF943CE2533874EEC1BF078CD98.mft: no valid mft available
+20221013T000224Z rpki-client: https://parent.rov.koenvanhove.nl/rrdp/notification.xml: pulling from network
+20221013T000225Z rpki-client: https://parent.rov.koenvanhove.nl/rrdp/notification.xml: notification file not modified
+20221013T000225Z rpki-client: https://parent.rov.koenvanhove.nl/rrdp/notification.xml: loaded from network
+20221013T000235Z rpki-client: https://rpki-repo.registro.br/rrdp/notification.xml: pulling from network
+20221013T000235Z rpki-client: rpki-test-repo.net.kagl.me/repo/KeatonAGLair-RPKI-TEST/1/481A02B656EE0C3E72635BDEAD3114AB7461A2E9.mft: no valid mft available
+20221013T000235Z rpki-client: https://rpki-repo.registro.br/rrdp/notification.xml: downloading snapshot
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/V00kEnto5oHJEhRaMMayIbP4KlA.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/STmJqI9ygR8i60Gk6wwSdOHx2pA.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/YmFCTuhQuS5FxpB3tvSkzniKeJM.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/S4D0bEIIq3jyH3EKKWI1-QYyTis.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36505B2/0569917622D711ED862FD6E0F1222468/fr3iqg5CdX8lyf2_Gp-NM23yu2c.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F3646C24/1C86B7862B5B11EC8EBEF540D8A014CE/_r9_454NpaYN1sjcZoHO9aJGKC4.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36505B2/0569917622D711ED862FD6E0F1222468/papPgUtMMAVGA7x4iUls_YlzO9A.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/0YiYIkQP2ghuQ_3L-e-Gb9Uepbw.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/6n6vYSDTEzssFOqYEf97HcuEQhE.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36505B2/0569917622D711ED862FD6E0F1222468/0nALpPtwFyntPHjkS8xt-VQrqLw.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/BpTOBmDPIzc01Obno4jqMUHuRbk.mft: no valid mft available
+20221013T000238Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/vJWioqaGyUWVsW4DMK6ROPdodIg.mft: no valid mft available
+20221013T000239Z rpki-client: rpki.afrinic.net/repository/member_repository/F36EE1C1/050BE1D635B311ED9721E3F0F1222468/uMx4HMq3HaLS0ZoP0TbJGEBE2zA.mft: no valid mft available
+20221013T000239Z rpki-client: https://invalid.rov.koenvanhove.nl/rrdp/notification.xml: pulling from network
+20221013T000239Z rpki-client: https://child.rov.koenvanhove.nl/rrdp/notification.xml: pulling from network
+20221013T000239Z rpki-client: repository.lacnic.net/rpki/lacnic/aa69a975-83a3-4532-a779-5ffb87580309/5cd2f8243d818d3fe519511b3a9506e7d6386f83.roa: RFC 3779 resource not subset of parent's resources
+20221013T000239Z rpki-client: repository.lacnic.net/rpki/lacnic/aa69a975-83a3-4532-a779-5ffb87580309/8449960fca567e9bbfa646ee4d53b0c307325174.roa: RFC 3779 resource not subset of parent's resources
+20221013T000240Z rpki-client: Error retrieving child.rov.koenvanhove.nl: 404 Not Found
+20221013T000240Z rpki-client: https://child.rov.koenvanhove.nl/rrdp/notification.xml: load from network failed, fallback to rsync
+20221013T000240Z rpki-client: .rsync/child.rov.koenvanhove.nl/repo: pulling from rsync://child.rov.koenvanhove.nl/repo
+20221013T000242Z rpki-client: https://rpki-repo.registro.br/rrdp/notification.xml: loaded from network
+20221013T000244Z rpki-client: rpki.afrinic.net/repository/member_repository/F368F2D0/92F86E1C6E0511E8A1B5854BF8AEA228/6456A4FE34DD11EDA28D33C1F1222468.roa: certificate is not yet valid
+20221013T000244Z rpki-client: rpki.afrinic.net/repository/member_repository/F368F2D0/92F86E1C6E0511E8A1B5854BF8AEA228/5FBC859E34DD11EDBD4B24C1F1222468.roa: certificate is not yet valid
+20221013T000244Z rpki-client: .rsync/child.rov.koenvanhove.nl/repo: loaded from network
+20221013T000245Z rpki-client: rpki.afrinic.net/repository/member_repository/F366742F/B09C4EFE3E6211EB82352F27F8AEA228/6362D79EE5F411EC92C467DEF1222468.roa: certificate is not yet valid
+20221013T000245Z rpki-client: rpki.afrinic.net/repository/member_repository/F366742F/B09C4EFE3E6211EB82352F27F8AEA228/D51A2348E5F311ECB314B3DCF1222468.roa: certificate is not yet valid
+20221013T000245Z rpki-client: rpki.afrinic.net/repository/member_repository/F366742F/B09C4EFE3E6211EB82352F27F8AEA228/B974CFFCE5F411ECB9F66FDFF1222468.roa: certificate is not yet valid
+20221013T000245Z rpki-client: rpki.afrinic.net/repository/member_repository/F366742F/B09C4EFE3E6211EB82352F27F8AEA228/2EE1E4A0E5F511ECB465DAE0F1222468.roa: certificate is not yet valid
+20221013T000246Z rpki-client: rpki.afrinic.net/repository/member_repository/F368F2D0/7F4A98EA6E0511E89C0D6E4BF8AEA228/6766FC685F2011EC938150DD5A40D577.roa: certificate revoked
+20221013T000246Z rpki-client: rpki.afrinic.net/repository/member_repository/F368F2D0/7F4A98EA6E0511E89C0D6E4BF8AEA228/9365F8282CFC11EDBCBC3CBAF1222468.roa: certificate is not yet valid
+20221013T000248Z rpki-client: child.rov.koenvanhove.nl/repo/KoenvanHoveChild/0/83A83258295119F96CCBEA06CA664AC7FB95BD4C.mft: no valid mft available
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/08c2f264-23f9-49fb-9d43-f8b50bec9261/notification.xml: pulling from network
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/08c2f264-23f9-49fb-9d43-f8b50bec9261/notification.xml: notification file not modified
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/08c2f264-23f9-49fb-9d43-f8b50bec9261/notification.xml: loaded from network
+20221013T000248Z rpki-client: https://rpki.akrn.net/rrdp/notification.xml: pulling from network
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/bd48a1fa-3471-4ab2-8508-ad36b96813e4/notification.xml: pulling from network
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/bd48a1fa-3471-4ab2-8508-ad36b96813e4/notification.xml: notification file not modified
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/bd48a1fa-3471-4ab2-8508-ad36b96813e4/notification.xml: loaded from network
+20221013T000248Z rpki-client: https://rpki.cnnic.cn/rrdp/notify.xml: pulling from network
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/c3cd7c24-12cb-4abc-8fd2-5e2bcbb85ae6/notification.xml: pulling from network
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/c3cd7c24-12cb-4abc-8fd2-5e2bcbb85ae6/notification.xml: notification file not modified
+20221013T000248Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/c3cd7c24-12cb-4abc-8fd2-5e2bcbb85ae6/notification.xml: loaded from network
+20221013T000249Z rpki-client: https://rpki.akrn.net/rrdp/notification.xml: repository not modified
+20221013T000249Z rpki-client: https://rpki.akrn.net/rrdp/notification.xml: loaded from network
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/708aafaf-00b4-485b-854c-0b32ca30f57b/notification.xml: pulling from network
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/708aafaf-00b4-485b-854c-0b32ca30f57b/notification.xml: notification file not modified
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/708aafaf-00b4-485b-854c-0b32ca30f57b/notification.xml: loaded from network
+20221013T000250Z rpki-client: https://rpki.rand.apnic.net/rrdp/notification.xml: pulling from network
+20221013T000250Z rpki-client: https://rpki.cnnic.cn/rrdp/notify.xml: downloading 6 deltas
+20221013T000250Z rpki-client: https://repo-rpki.idnic.net/rrdp/notification.xml: pulling from network
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/db9a372a-09bc-4a32-bfe4-8c48e5dbd219/notification.xml: pulling from network
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/db9a372a-09bc-4a32-bfe4-8c48e5dbd219/notification.xml: notification file not modified
+20221013T000250Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/db9a372a-09bc-4a32-bfe4-8c48e5dbd219/notification.xml: loaded from network
+20221013T000251Z rpki-client: https://rpki.blade.sh/rrdp/notification.xml: pulling from network
+20221013T000251Z rpki-client: https://rpki.blade.sh/rrdp/notification.xml: notification file not modified
+20221013T000251Z rpki-client: https://rpki.blade.sh/rrdp/notification.xml: loaded from network
+20221013T000251Z rpki-client: https://repo-rpki.idnic.net/rrdp/notification.xml: downloading 10 deltas
+20221013T000251Z rpki-client: https://rrdp.twnic.tw/rrdp/notify.xml: pulling from network
+20221013T000251Z rpki-client: https://rpki.rand.apnic.net/rrdp/notification.xml: downloading 1 deltas
+20221013T000252Z rpki-client: https://rpki.cnnic.cn/rrdp/notify.xml: loaded from network
+20221013T000252Z rpki-client: https://rpki.rand.apnic.net/rrdp/notification.xml: loaded from network
+20221013T000252Z rpki-client: https://rpki-repository.nic.ad.jp/rrdp/ap/notification.xml: pulling from network
+20221013T000252Z rpki-client: https://sakuya.nat.moe/rrdp/notification.xml: pulling from network
+20221013T000252Z rpki-client: https://rrdp.twnic.tw/rrdp/notify.xml: repository not modified
+20221013T000252Z rpki-client: https://rrdp.twnic.tw/rrdp/notify.xml: loaded from network
+20221013T000253Z rpki-client: https://sakuya.nat.moe/rrdp/notification.xml: downloading 1 deltas
+20221013T000253Z rpki-client: https://sakuya.nat.moe/rrdp/notification.xml: loaded from network
+20221013T000253Z rpki-client: https://repo-rpki.idnic.net/rrdp/notification.xml: loaded from network
+20221013T000253Z rpki-client: https://rpki-repository.nic.ad.jp/rrdp/ap/notification.xml: repository not modified
+20221013T000253Z rpki-client: https://rpki-repository.nic.ad.jp/rrdp/ap/notification.xml: loaded from network
+20221013T000254Z rpki-client: invalid.rov.koenvanhove.nl: connect timeout
+20221013T000254Z rpki-client: invalid.rov.koenvanhove.nl: connect timeout
+20221013T000254Z rpki-client: https://invalid.rov.koenvanhove.nl/rrdp/notification.xml: load from network failed, fallback to rsync
+20221013T000254Z rpki-client: .rsync/invalid.rov.koenvanhove.nl/repo: pulling from rsync://invalid.rov.koenvanhove.nl/repo
+20221013T000309Z rsync error: timeout waiting for daemon connection (code 35) at socket.c(278) [Receiver=3.2.4]
+20221013T000309Z rpki-client: rsync rsync://invalid.rov.koenvanhove.nl/repo failed
+20221013T000309Z rpki-client: .rsync/invalid.rov.koenvanhove.nl/repo: load from network failed, fallback to cache
+20221013T000321Z rpki-client: rpki-repo.registro.br/repo/BFectnkRkJtNz5NR4JmwyECBnfGURK4LU1dHfx66ntMS/0/A8F99EC8D2EB5E7366AF6C2A0FCDB2E34BC11802.mft: no valid mft available
+20221013T000322Z rpki-client: rpki-repo.registro.br/repo/7N7RHZhR3jv8TF9jD95qhzkr1RuWt42vZDr9jeEY5TdG/0/3448D9FF68BAB6B32FD7182F798ABC05793ECCB3.mft: no valid mft available
+20221013T000322Z rpki-client: rpki-repo.registro.br/repo/3mKazay9XWo7eZjTtQU8oQWvLsTHaNFeanNWZ6TZrtMe/0/E6390BBAAFAC21FCFD5624E34B352562B6BFCA8C.mft: no valid mft available
+20221013T000323Z rpki-client: rpki-repo.registro.br/repo/2J94jDweR5vDJfLdEHmVwR78eEnn2Jta8gptBMLUWrGn/0/696D6B326D9C12A945BCBE298260CBC9DB6DC28B.mft: no valid mft available
+20221013T000324Z rpki-client: rpki-repo.registro.br/repo/681DJFq6xXWyA7nWN5FGg8NwEsfXnmXKjKgzmSATPsLt/0/66631F2E50A377F5BEF32619A1F80005A8FB3449.mft: no valid mft available
+20221013T000324Z rpki-client: rpki-repo.registro.br/repo/ARdYVt7B73f18SozQGhva1FKbKyqRipjAW7TwvuGkfRa/0/4864B692BB83133E7B25C7DD7326C1DE5A940D05.mft: no valid mft available
+20221013T000324Z rpki-client: rpki-repo.registro.br/repo/GaLd6ApocDBCeWjwwPnuPuRnkyXPKRC2YTeDdGc4daE4/0/85C845080CDFB39C4E6BDD0120B9395B545E1094.mft: no valid mft available
+20221013T000324Z rpki-client: rpki-repo.registro.br/repo/9PpDQWjoVWtHeB2HP8Fm2szrNYrHZGTrUBPfsbtb3Zwh/0/4DC88A28EFE47FB2B2999366E87B846B978795F6.mft: no valid mft available
+20221013T000325Z rpki-client: rpki-repo.registro.br/repo/69P6RGriXpSCLpycFEQtzZ7JWJTrf1vGr8KuztDkZGXi/0/10A19F69317622C9272C03EED9B0206D0254C4C1.mft: no valid mft available
+20221013T000325Z rpki-client: rpki-repo.registro.br/repo/88cX6CD81UZowYwqPjrLauKCXmpA9ZqQNGCxKtYiEXti/0/9ED3DF2051B101D717E778ADDDC684D793465A61.mft: no valid mft available
+20221013T000325Z rpki-client: rpki-repo.registro.br/repo/GJbkMPE6VVsZL7VVDTWfebsrETv8Tfxe7rHDW2KAw1rC/0/D20859B570AC0361878637E4B92D0539812F25C4.mft: no valid mft available
+20221013T000326Z rpki-client: rpki-repo.registro.br/repo/FEMGmkL6CpWnue3WgXpNgnvssfiWJ2Gnoa5CqTbLvShv/0/813614C43A5B26F0DFD7BA0A3578F1F68B3A0AC5.mft: no valid mft available
+20221013T000326Z rpki-client: rpki-repo.registro.br/repo/7XyX5Gcz8bhH7juvSoBXx7Ytx96harkmsFMir84U1N3B/0/BB190ECE7C4770610087C07D724B0B15E2BFC739.mft: no valid mft available
+20221013T000327Z rpki-client: rpki-repo.registro.br/repo/DQd4q7BpstcLLmLkarCYKaDWeu9CpnSwYWbaBsNEVRLg/0/224F617A8C99E9C0B41AB0A2513575EED38D03E8.mft: no valid mft available
+20221013T000328Z rpki-client: rpki-repo.registro.br/repo/BaizcdwdFrjfg1tkFQ5wnWBRF9ki2LNowseGdLH4SU1T/0/D2D6B41AFA2BCE57DA0667CA1C8E18A2FE1C1C0D.mft: no valid mft available
+20221013T000328Z rpki-client: rpki-repo.registro.br/repo/3vBQjwwAVyhHR7ifeF11DtAt3Cog5xBPBHTH42yGrs7M/0/ABECE26B7CA448CD27CB0352BB322178BED35B7F.mft: no valid mft available
+20221013T000329Z rpki-client: rpki-repo.registro.br/repo/4FCjdLGVFJnpgohqJPmtGHR7BEnZH79i49QpT1eyMm1m/0/181A1C185F5EC2A13E97AB76EAAED25C54C3D7AE.mft: no valid mft available
+20221013T000329Z rpki-client: rpki-repo.registro.br/repo/35eK4h8HkyLT49HDi1cPcdhu6sCXq4B5PoqDZ4PmZknh/0/0DC3301FCBDE2BA3C4D29AF58DA6145072D1006B.mft: no valid mft available
+20221013T000330Z rpki-client: rpki-repo.registro.br/repo/7WFqUnjSvvLje5QQr5UpuGCyruLpgbnCcvc4q3uQDx3H/0/9E54D69054206DEF8B1FF13819043F54681F0EED.mft: no valid mft available
+20221013T000330Z rpki-client: rpki-repo.registro.br/repo/BeS4RpdPuVH8sAPzifgaH71VbGVFTUfsvrKnqDLnkvm7/0/73F4CAC0D954451739E79AFE193B21C06A17D668.mft: no valid mft available
+20221013T000331Z rpki-client: rpki-repo.registro.br/repo/GvfhAciEXy2cQjTUjcXgMzoVpnf3AdscpYYhxuh2rwfT/0/4CA1102CD75669834E63B46E54E533B8FAAA6BA0.mft: no valid mft available
+20221013T000345Z rpki-client: https://rrdp-rps.arin.net/notification.xml: pulling from network
+20221013T000346Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/b68a32ee-455d-483a-943d-1a5be748bfea/notification.xml: pulling from network
+20221013T000346Z rpki-client: https://rrdp-rps.arin.net/notification.xml: repository not modified
+20221013T000346Z rpki-client: https://rrdp-rps.arin.net/notification.xml: loaded from network
+20221013T000346Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/b68a32ee-455d-483a-943d-1a5be748bfea/notification.xml: downloading 1 deltas
+20221013T000346Z rpki-client: https://rpki-rrdp.us-east-2.amazonaws.com/rrdp/b68a32ee-455d-483a-943d-1a5be748bfea/notification.xml: loaded from network
+20221013T000350Z rpki-client: invalid.rov.koenvanhove.nl/repo/KoenvanHoveInvalid/0/EED1912B8118941CF4E8AF3D9D161F8E671E9658.mft: no valid mft available
+20221013T000353Z rpki-client: https://rpki.apernet.io/rrdp/notification.xml: pulling from network
+20221013T000353Z rpki-client: https://rpki-rrdp.mnihyc.com/rrdp/notification.xml: pulling from network
+20221013T000353Z rpki-client: https://rpki.luys.cloud/rrdp/notification.xml: pulling from network
+20221013T000354Z rpki-client: https://rpki-rrdp.mnihyc.com/rrdp/notification.xml: repository not modified
+20221013T000354Z rpki-client: https://rpki-rrdp.mnihyc.com/rrdp/notification.xml: loaded from network
+20221013T000354Z rpki-client: https://rpki.apernet.io/rrdp/notification.xml: notification file not modified
+20221013T000354Z rpki-client: https://rpki.apernet.io/rrdp/notification.xml: loaded from network
+20221013T000355Z rpki-client: https://rpki.luys.cloud/rrdp/notification.xml: repository not modified
+20221013T000355Z rpki-client: https://rpki.luys.cloud/rrdp/notification.xml: loaded from network
+20221013T000432Z rpki-client: https://rpki.dataplane.org/rrdp/notification.xml: pulling from network
+20221013T000432Z rpki-client: https://rpki.dataplane.org/rrdp/notification.xml: notification file not modified
+20221013T000432Z rpki-client: https://rpki.dataplane.org/rrdp/notification.xml: loaded from network
+20221013T000433Z rpki-client: https://rpki.sailx.co/rrdp/notification.xml: pulling from network
+20221013T000433Z rpki-client: https://rpki.sailx.co/rrdp/notification.xml: TLS handshake: certificate verification failed: certificate has expired
+20221013T000433Z rpki-client: https://rpki.sailx.co/rrdp/notification.xml: load from network failed, fallback to rsync
+20221013T000433Z rpki-client: .rsync/rpki.sailx.co/repo: pulling from rsync://rpki.sailx.co/repo
+20221013T000433Z rpki-client: https://ca.nat.moe/rrdp/notification.xml: pulling from network
+20221013T000434Z rpki-client: https://rpki.tools.westconnect.ca/rrdp/notification.xml: pulling from network
+20221013T000434Z rpki-client: https://ca.nat.moe/rrdp/notification.xml: notification file not modified
+20221013T000434Z rpki-client: https://ca.nat.moe/rrdp/notification.xml: loaded from network
+20221013T000434Z rpki-client: https://rpki.tools.westconnect.ca/rrdp/notification.xml: notification file not modified
+20221013T000434Z rpki-client: https://rpki.tools.westconnect.ca/rrdp/notification.xml: loaded from network
+20221013T000448Z rsync error: timeout waiting for daemon connection (code 35) at socket.c(278) [Receiver=3.2.4]
+20221013T000448Z rpki-client: rsync rsync://rpki.sailx.co/repo failed
+20221013T000448Z rpki-client: .rsync/rpki.sailx.co/repo: load from network failed, fallback to cache
+20221013T000512Z rpki-client: invalid.rov.koenvanhove.nl/repo/KoenvanHoveInvalid/1/B23E86FDC2C6787B2FCE007A2F5C2DBAE27832EC.mft: no valid mft available
+20221013T000512Z rpki-client: child.rov.koenvanhove.nl/repo/KoenvanHoveChild/1/86760B61C442883AE7965D68D1D7AA8988B7746F.mft: no valid mft available
+20221013T000517Z rpki-client: rpki-rps.arin.net/repository/8a848ade7fb71aa9017fdd9c5dd324c7/0/EB1DD8AA3E2B6864E06379C751DBFFFCC6418350.mft: no valid mft available
+20221013T000517Z rpki-client: rpki-rps.arin.net/repository/8a848ade7fb71aa901800003287f4402/0/2BF7605B8927C87448B3B294A8B61D8E983248E0.mft: no valid mft available
+20221013T000518Z rpki-client: rpki-rps.arin.net/repository/8a848adf7fb722e9017ffead9f534ac5/0/BFA2750976CA07F56A68976B0F01EB862F17C3B3.mft: no valid mft available
+20221013T000518Z rpki-client: rpki.sailx.co/repo/Sail-Internet-Inc/0/DFC5509768EA587E638D20680032E0FF122BD25A.mft: no valid mft available
+20221013T000518Z rpki-client: .rrdp/B8F24A9D701C0FA9BC46D97164BAF1C97CC608A7211B021A0CC972EA5BFCD2AC/rpki.cnnic.cn/rpki/A9162E3D0000/1663/WacD3U30VhdpY24UZCpxZoLZ2Sg.roa: RFC 3779 resource not subset of parent's resources
+20221013T000537Z rpki-client: all files parsed: generating output
+20221013T000543Z Processing time 340 seconds (321 seconds user, 31 seconds system)
+20221013T000543Z Skiplist entries: 0
+20221013T000543Z Route Origin Authorizations: 131222 (11 failed parse, 0 invalid)
+20221013T000543Z AS Provider Attestations: 0 (0 failed parse, 0 invalid)
+20221013T000543Z BGPsec Router Certificates: 2
+20221013T000543Z Certificates: 33821 (0 invalid)
+20221013T000543Z Trust Anchor Locators: 5 (0 invalid)
+20221013T000543Z Manifests: 33819 (110 failed parse, 0 stale)
+20221013T000543Z Certificate revocation lists: 33709
+20221013T000543Z Ghostbuster records: 2
+20221013T000543Z Repositories: 62
+20221013T000543Z Cleanup: removed 28 files, 2768 directories, 8838 superfluous
+20221013T000543Z VRP Entries: 397190 (388196 unique)
+20221013T000543Z VAP Entries: 0 (0 unique)
