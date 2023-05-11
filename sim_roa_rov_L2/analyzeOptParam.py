@@ -1,5 +1,4 @@
 import pickle 
-from tabulate import tabulate
 from itertools import permutations
 import itertools
 
@@ -33,7 +32,7 @@ def get_param_Permutation(pool):
 
 #return the difference between 2 list 
 def Diff(li1, li2):
-        """
+    """
     return the difference of two lists
     :param lst1: (list) first input list
     :param lst2: (list) second input list 
@@ -73,9 +72,9 @@ def analyzeParam(LBfilename, roa_rovFilename, ProaFilename):
     ProaDict = dict()
 
     #threshold where we include this param into the qualified list 
-    LBcutoff = 0.6
-    RRcutoff = 0.06
-    pROAcutoff = 0.5423
+    LBcutoff = 0.75
+    RRcutoff = 0.03
+    pROAcutoff = 0.73
     #open each file and iterate to get the qualified param 
     with open(LBfilename, 'rb') as f:
         resultLB = pickle.load(f)
@@ -112,8 +111,11 @@ def analyzeParam(LBfilename, roa_rovFilename, ProaFilename):
 
     tablels = []#list in list with entry [param, roarov, LB, Percent ROA]
     overall_qualified_param = []#list of overall qualified param 
+    head = ["rov, roa, neither","ROA ROV Matching", 'Load Balance', 'Percent ROA Coverage']
+    print(head)
     for i in all_intersect:
         tablels.append([i,RRDict[i] ,LBDict[i], ProaDict[i]])
+        print(i,",",RRDict[i],",",LBDict[i], ",", ProaDict[i])
         overall_qualified_param.append(i)
         #if the current param's performance > max, assign it as max 
         if RRDict[i] + LBDict[i] + ProaDict[i] > maxval:
@@ -124,10 +126,10 @@ def analyzeParam(LBfilename, roa_rovFilename, ProaFilename):
         pickle.dump(overall_qualified_param, f)
 
     #output the table 
-    print('max:', maxParam ,maxval)
+    # print('max:', maxParam ,maxval)
 
-    head = ["rov, roa, neither","ROA ROV Matching", 'Load Balance', 'Percent ROA Coverage']
-    print(tabulate(tablels, headers=head, tablefmt="grid"))
+    # head = ["rov, roa, neither","ROA ROV Matching", 'Load Balance', 'Percent ROA Coverage']
+    # print(tabulate(tablels, headers=head, tablefmt="grid"))
 
 #open pickle file and get all param with neitherDiscount = 1
 def get_fair_param(file):
@@ -179,6 +181,7 @@ def get_max_param(file):
     print(max_param_spec)
 
 # get_max_param('fairParam.pickle')
-# analyzeParam('/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermLBResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/PermROA_ROVResult.pickle', '/home/siyang/research/tor-rpki/sim_roa_rov_L2/Perm_pROA_Result.pickle')
+
+analyzeParam('/home/ys3kz/TorPythonSimulator/TOR-RPKI_Siyang/sim_roa_rov_L2/PermLBResult2023.pickle', '/home/ys3kz/TorPythonSimulator/TOR-RPKI_Siyang/sim_roa_rov_L2/PermROA_ROVResult2023.pickle', '/home/ys3kz/TorPythonSimulator/TOR-RPKI_Siyang/sim_roa_rov_L2/Perm_pROA_Result2023.pickle')
 # get_max_param('/home/siyang/research/tor-rpki/sim_roa_rov_L2/qualifiedParam10runs.pickle')
 
